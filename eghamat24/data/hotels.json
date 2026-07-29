@@ -1,0 +1,220 @@
+[
+{
+  "id": 1,
+  "name": "هتل مدینه الرضا مشهد",
+  "slug": "Madineh-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان شیرازی",
+  "stars": 5,
+  "price": "6.600.000 تومان",
+  "discount": "40% تخفیف",
+  "rating": "8/10",
+  "reviewCount": 443,
+  "image": "/Mashhad/Mashhad_Madineh_alreza-12.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "مجموعه آبی رایگان",
+    "پذیرایی رایگان",
+    "صبحانه",
+    "عکس رایگان"
+  ]
+} ,
+  {
+  "id": 2,
+  "name": "هتل الماس 2 مشهد ",
+  "slug": "almas2-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا",
+  "stars": 5,
+  "price": "6.175.000 تومان",
+  "discount": "70% تخفیف",
+  "rating": "8/10",
+  "reviewCount": 1148,
+  "image": "/Mashhad/Mashhad_Almas_2-36.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "نزدیک حرم",
+    "استخر رایگان",
+    "عکس رایگان"
+  ]
+} ,
+ {
+  "id": 3,
+  "name": "هتل گلدن پالاس مشهد ",
+  "slug": "Qasr_talaee-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا",
+  "stars": 5,
+  "price": "5.600.000 تومان",
+  "discount": "38% تخفیف",
+  "rating": "8/10",
+  "reviewCount": 770,
+  "image": "/Mashhad/Mashhad-Qasr_talaee-23.jpg",
+  "amenities": [
+    "مجموعه آبی رایگان",
+    "مینی بار رایگان"
+  ]
+} ,
+ {
+  "id": 4,
+  "name": "هتل سی نور مشهد ",
+  "slug": "Sinoor-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان هفده شهریور ",
+  "stars": 5,
+  "price": "4.700.000 تومان",
+  "discount": "44% تخفیف",
+  "rating": "7/10",
+  "reviewCount": 211,
+  "image": "/Mashhad/Mashhad-Sinoor-91.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+ {
+  "id": 5,
+  "name": "هتل الماس مشهد ",
+  "slug": "Almas-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا ",
+  "stars": 4,
+  "price": "5.500.000 تومان",
+  "discount": "60% تخفیف",
+  "rating": "7/10",
+  "reviewCount": 715,
+  "image": "/Mashhad/Mashhad-Almas-24.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 6,
+  "name": "هتل پارسیس مشهد  ",
+  "slug": "Parsis-hotel",
+  "cityId": 1,
+  "address": "مشهد، بلوار وحدت ",
+  "stars": 5,
+  "price": "3.550.000 تومان",
+  "discount": "45% تخفیف",
+  "rating": "6/10",
+  "reviewCount": 175,
+  "image": "/Mashhad/Mashhad-Parsis-66.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 7,
+  "name": "هتل درویشی مشهد",
+  "slug": "Darvishi-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا ",
+  "stars": 5,
+  "price": "9.120.000 تومان",
+  "discount": "5% تخفیف",
+  "rating": "7.5/10",
+  "reviewCount": 669,
+  "image": "/Mashhad/Mashhad-Darvishi-44.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 8,
+  "name": "هتل الماس نوین مشهد",
+  "slug": "novin-AlmasNovin",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا ",
+  "stars": 4,
+  "price": "3.500.000 تومان",
+  "discount": "61% تخفیف",
+  "rating": "7.6/10",
+  "reviewCount": 346,
+  "image": "/Mashhad/Mashhad-AlmasNovin-99.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 9,
+  "name": "هتل جواد مشهد",
+  "slug": "Javad-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا ",
+  "stars": 4,
+  "price": "5.200.000 تومان",
+  "discount": "40% تخفیف",
+  "rating": "7.3/10",
+  "reviewCount": 739,
+  "image": "/Mashhad/Mashhad-Javad-69.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 10,
+  "name": "هتل فردوس مشهد",
+  "slug": "Ferdous-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا ",
+  "stars": 4,
+  "price": "3.327.500 تومان",
+  "discount": "45% تخفیف",
+  "rating": "7.7/10",
+  "reviewCount": 227,
+  "image": "/Mashhad/Mashhad-Ferdous-01.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 11,
+  "name": "هتل تبرک مشهد",
+  "slug": "tabarok-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان امام رضا ",
+  "stars": 4,
+  "price": "3.250.000 تومان",
+  "discount": "35% تخفیف",
+  "rating": "7.9/10",
+  "reviewCount": 203,
+  "image": "/Mashhad/mashhad-tabarok-62.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+{
+  "id": 12,
+  "name": "هتل ضیافت الزهرا مشهد",
+  "slug": "Ziyafatalzahra-hotel",
+  "cityId": 1,
+  "address": "مشهد، خیابان نواب صفوی ",
+  "stars": 5,
+  "price": "6.600.000 تومان",
+  "discount": "45% تخفیف",
+  "rating": "7.9/10",
+  "reviewCount": 52,
+  "image": "/Mashhad/Mashhad-Ziyafatalzahra-28.jpg",
+  "amenities": [
+    "ترانسفر استقبال فرودگاهی",
+    "کیک تولد رایگان",
+    "عکس رایگان"
+  ]
+} ,
+]
