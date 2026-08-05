@@ -3,6 +3,7 @@ import SearchBoxMainPage from "../components/SearchBox/box/searchBoxMainPage";
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import BannerLeft from "@/components/HeroBanner/BannerLeft";
 import IranianHotelSlider from "@/components/IranianHotel";
+import CanseledHotel from "@/components/CanseledHotel/CanseledHotel";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         </div>
         {/* Hero Banner */}
         <div
-         className="mt-12 md:grid
+          className="mt-12 md:grid
          md:grid-cols-6
          md:gap-4"
         >
@@ -38,6 +39,10 @@ export default function Home() {
         {/* IranianHotelSlider */}
         <div className="mt-24">
           <IranianHotelSlider />
+        </div>
+        {/* CanseledHotel box*/}
+        <div className="mt-24">
+          <CanseledHotel />
         </div>
       </div>
     </main>

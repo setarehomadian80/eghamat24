@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "cityId": 1,
     "name": "هتل‌های مشهد",
     "discount": 82,
     "slug": "mashhad-hotels",
@@ -8,6 +9,7 @@
   },
   {
     "id": 2,
+    "cityId": 12,
     "name": "هتل‌های کیش",
     "discount": 92,
     "slug": "kish-hotels",
@@ -15,6 +17,7 @@
   },
   {
     "id": 3,
+    "cityId": 2,
     "name": "هتل‌های تهران",
     "discount": 69,
     "slug": "tehran-hotels",
@@ -22,6 +25,7 @@
   },
   {
     "id": 4,
+    "cityId": 9,
     "name": "هتل‌های قشم",
     "discount": 63,
     "slug": "qeshm-hotels",
@@ -29,6 +33,7 @@
   },
   {
     "id": 5,
+    "cityId": 3,
     "name": "هتل‌های شیراز",
     "discount": 68,
     "slug": "shiraz-hotels",
@@ -36,6 +41,7 @@
   },
   {
     "id": 6,
+    "cityId": 4,
     "name": "هتل‌های اصفهان",
     "discount": 63,
     "slug": "isfahan-hotels",
@@ -43,6 +49,7 @@
   },
   {
     "id": 7,
+    "cityId": 5,
     "name": "هتل‌های یزد",
     "discount": 68,
     "slug": "yazd-hotels",
@@ -50,44 +57,10 @@
   },
   {
     "id": 8,
+    "cityId": 21,
     "name": "هتل‌های تبریز",
     "discount": 25,
     "slug": "tabriz-hotels",
     "type": "iran"
-  },
-  {
-    "id": 9,
-    "name": "هتل‌های استانبول",
-    "discount": 25,
-    "slug": "istanbul-hotels",
-    "type": "foreign"
-  },
-  {
-    "id": 10,
-    "name": "هتل‌های وان",
-    "discount": 35,
-    "slug": "van-hotels",
-    "type": "foreign"
-  },
-  {
-    "id": 11,
-    "name": "هتل‌های دبی",
-    "discount": 20,
-    "slug": "dubai-hotels",
-    "type": "foreign"
-  },
-  {
-    "id": 12,
-    "name": "هتل‌های نجف",
-    "discount": 25,
-    "slug": "najaf-hotels",
-    "type": "foreign"
-  },
-  {
-    "id": 13,
-    "name": "هتل‌های کربلا",
-    "discount": 25,
-    "slug": "karbala-hotels",
-    "type": "foreign"
   }
 ]
