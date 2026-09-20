@@ -1,9 +1,17 @@
-import React from "react";
+"use client";
 import SearchBoxMainPage from "../components/SearchBox/box/searchBoxMainPage";
 import HeroBanner from "@/components/HeroBanner/HeroBanner";
 import BannerLeft from "@/components/HeroBanner/BannerLeft";
 import IranianHotelSlider from "@/components/IranianHotel";
 import CanseledHotel from "@/components/CanseledHotel/CanseledHotel";
+import TopHotels from "@/components/TopHotels";
+import TopDiscountHotels from "../components/TopDiscountHotel";
+import StatsSection from "../components/StatsSection";
+import Blog from "@/components/Blog";
+import Banner from "@/components/Banner";
+import HotelsGroup from "@/components/HotelsGroup";
+import FAQDropdown from "@/components/FaqSection";
+import HotelInformation from "@/components/HotelInformation";
 
 export default function Home() {
   return (
@@ -44,6 +52,34 @@ export default function Home() {
         <div className="mt-24">
           <CanseledHotel />
         </div>
+        {/* top hotels */}
+        <div className="mt-24">
+          <TopHotels />
+        </div>
+
+        {/* top discount hotels */}
+        <div className="mt-24">
+          <TopDiscountHotels />
+        </div>
+          <div className="mt-24">
+          <StatsSection />
+        </div>
+         <div className="mt-24">
+          <Blog />
+        </div>
+        <div className="mt-24">
+          <Banner />
+        </div>
+         <div className="mt-24">
+          <HotelsGroup />
+        </div>
+        <div className="mt-24">
+          <FAQDropdown />
+        </div>
+        <div className="mt-24">
+          <HotelInformation />
+        </div>
+        
       </div>
     </main>
   );

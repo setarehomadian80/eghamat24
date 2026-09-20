@@ -1,12 +1,9 @@
 "use client";
 
 import * as React from "react";
+import citiesHotel from "@/data/citiesHotel.json";
 import Link from "next/link";
-import {
-  CircleAlertIcon,
-  CircleCheckIcon,
-  CircleDashedIcon,
-} from "lucide-react";
+import citiesAccommodation from "@/data/citiesAccommodation.json"
 
 import {
   NavigationMenu,
@@ -18,180 +15,135 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const eghamatgah: { title: string; href: string; description: string }[] = [
-  {
-    title: "اقامتگاه قشم",
-    href: "#",
-    description: "تخفیف تا 78%",
-  },
-  {
-    title: "اقامتگاه یزد",
-    href: "#",
-    description: "تخفیف تا 91 %",
-  },
-  {
-    title: "اقامتگاه تهران",
-    href: "#",
-    description: "تخفیف تا 64 %",
-  },
-  {
-    title: "اقامتگاه اصفهان",
-    href: "#",
-    description: "تخفیف تا 73  %",
-  },
-  {
-    title: "اقامتگاه بوشهر",
-    href: "#",
-    description: "تخفیف تا 20 %",
-  },
-  {
-    title: "اقامتگاه رشت",
-    href: "#",
-    description: "تخفیف تا 14 %",
-  },
-  {
-    title: "اقامتگاه شیراز",
-    href: "#",
-    description: "تخفیف تا 75 %",
-  },
-  {
-    title: "اقامتگاه کاشان",
-    href: "#",
-    description: "تخفیف تا 76 %",
-  },
-];
-const hotels: { title: string; href: string; description: string }[] = [
-  {
-    title: "هتل های مشهد",
-    href: "#",
-    description: "تخفیف تا 90%",
-  },
-  {
-    title: "هتل های کیش",
-    href: "#",
-    description: "تخفیف تا 92 %",
-  },
-  {
-    title: "هتل های تهران",
-    href: "#",
-    description: "تخفیف تا 69 %",
-  },
-  {
-    title: "هتل های قشم",
-    href: "#",
-    description: "تخفیف تا 84  %",
-  },
-  {
-    title: "هتل های شیراز",
-    href: "#",
-    description: "تخفیف تا 64 %",
-  },
-  {
-    title: "هتل های اصفهان",
-    href: "#",
-    description: "تخفیف تا 68 %",
-  },
-  {
-    title: "هتل های یزد",
-    href: "#",
-    description: "تخفیف تا 67 %",
-  },
-  {
-    title: "هتل های تبریز",
-    href: "#",
-    description: "تخفیف تا 25 %",
-  },
-];
-const foreignHotels = [
-  {
-    title: "هتل های استانبول",
-    href: "#",
-    description: "تخفیف تا 24%",
-  },
-  {
-    title: "هتل های وان",
-    href: "#",
-    description: "تخفیف تا 33%",
-  },
-  {
-    title: "هتل های دبی",
-    href: "#",
-    description: "تخفیف تا 50%",
-  },
-  {
-    title: "هتل های نجف",
-    href: "#",
-    description: "تخفیف تا 18%",
-  },
-  {
-    title: "هتل های کربلا",
-    href: "#",
-    description: "تخفیف تا 61%",
-  },
-];
+type city_hotel = {
+  id: number;
+  cityId: number;
+  name: string;
+  discount: string;
+  slug: string;
+  href: string;
+  type: "iran" | "foreign";
+};
+
+type city_Accommodation = {
+  id: number;
+  cityId: number;
+  name: string;
+  discount: string;
+  slug: string;
+  href: string;
+};
+
+const hotel_menu = citiesHotel as city_hotel[];
+const Accommodation_menu = citiesAccommodation as city_Accommodation[];
+
+const iranCities = hotel_menu.filter((city) => city.type === "iran");
+const foreignCities = hotel_menu.filter((city) => city.type === "foreign");
+
+
 ///////////////////////////
 const tour: { title: string; href: string; description: string }[] = [
   {
     title: "تور کیش",
-    href: "#",
+    href: "/KishTours.html",
     description: "تخفیف تا 90%",
   },
   {
     title: "تور مشهد",
-    href: "#",
+    href: "/MashhadTours.html",
     description: "تخفیف تا 92 %",
   },
   {
     title: "تور قشم",
-    href: "#",
+    href: "/QeshmTours.html",
     description: "تخفیف تا 69 %",
   },
   {
     title: "تور چابهار",
-    href: "#",
+    href: "/ChabaharTours.html",
     description: "تخفیف تا 84  %",
   },
   {
     title: "تور شیراز",
-    href: "#",
+    href: "/ShirazTours.html",
     description: "تخفیف تا 64 %",
   },
   {
     title: "تور اصفهان",
-    href: "#",
+    href: "/EsfahanTours.html",
     description: "تخفیف تا 68 %",
   },
 ];
 const foreigntour = [
   {
     title: "تور دبی",
-    href: "#",
+    href: "/DubaiTours.html",
     description: "تخفیف تا 24%",
   },
   {
     title: "تور استانبول",
-    href: "#",
+    href: "/IstanbulTours.html",
     description: "تخفیف تا 33%",
   },
   {
     title: "تور آنتالیا",
-    href: "#",
+    href: "/AntalyaTours.html",
     description: "تخفیف تا 50%",
   },
   {
     title: "تور ایروان",
-    href: "#",
+    href: "/YerevanTours.html",
     description: "تخفیف تا 18%",
   },
   {
     title: "تور تفلیس",
-    href: "#",
+    href: "/TbilisiTours.html",
     description: "تخفیف تا 8%",
   },
-   {
+  {
     title: "تور نجف",
-    href: "#",
+    href: "/NajafTours.html",
     description: "تخفیف تا 18%",
+  },
+];
+const Flight: { title: string; href: string }[] = [
+  {
+    title: "بلیط هواپیما تهران",
+    href: "/TehranFlights.html",
+  },
+  {
+    title: "بلیط هواپیما مشهد",
+    href: "/MashhadFlights.html",
+  },
+  {
+    title: "بلیط هواپیما تبریز",
+    href: "/TabrizFlights.html",
+  },
+  {
+    title: "بلیط هواپیما اصفهان",
+    href: "/EsfahanFlights.html",
+  },
+  {
+    title: "بلیط هواپیما کیش",
+    href: "/KishFlights.html",
+  },
+];
+const foreignFlight: { title: string; href: string }[] = [
+  {
+    title: "بلیط هواپیما استانبول",
+    href: "/IstanbulFlights.html",
+  },
+  {
+    title: "بلیط هواپیما تفلیس",
+    href: "/TbilisiFlights.html",
+  },
+  {
+    title: "بلیط هواپیما ایروان",
+    href: "/YerevanFlights.html",
+  },
+  {
+    title: "بلیط هواپیما مسقط",
+    href: "/MuscatFlights.html",
   },
 ];
 const Ticket: { title: string; href: string; description: string }[] = [
@@ -212,17 +164,24 @@ const Ticket: { title: string; href: string; description: string }[] = [
   },
 ];
 
-
 export function NavigationMenuDemo() {
   const [activeHotel, setActiveHotel] = React.useState<"internal" | "external">(
     "internal",
   );
 
+  const [activeTour, setActiveTour] = React.useState<"internal" | "external">(
+    "internal",
+  );
+
+  const [activeFlight, setActiveFlight] = React.useState<
+    "internal" | "external"
+  >("internal");
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         {/* 1 */}
-        <NavigationMenuItem>
+        <NavigationMenuItem className="cursor-pointer">
           <NavigationMenuTrigger>رزرو هتل</NavigationMenuTrigger>
 
           <NavigationMenuContent>
@@ -256,18 +215,21 @@ export function NavigationMenuDemo() {
 
               {/* ستون لیست */}
               <div className="flex-1 p-6 w-87.5 ">
-                {(activeHotel === "internal" ? hotels : foreignHotels).map(
+                {(activeHotel === "internal" ? iranCities : foreignCities).map(
                   (item) => (
+                    
                     <NavigationMenuLink
-                      key={item.title}
+                      key={item.id}
+                      render={  <Link href={`/hotel/${item.slug}`} />}
                       className="block cursor-pointer
              rounded-lg p-3 hover:bg-gray-100 text-[12px]"
                     >
+                      {" "}
                       <div className="flex justify-between">
-                        <span className="font-medium">{item.title}</span>
+                        <span className="font-medium">{item.name}</span>
 
                         <span className="text-gray-500 text-[12px]">
-                          {item.description}
+                          {item.discount}
                         </span>
                       </div>
                     </NavigationMenuLink>
@@ -291,18 +253,19 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
 
         {/* 2 */}
-        <NavigationMenuItem>
+        <NavigationMenuItem className="cursor-pointer">
           <NavigationMenuTrigger>رزرو اقامتگاه</NavigationMenuTrigger>
           <NavigationMenuContent className="w-75">
             <div className="w-full p-3">
-              {eghamatgah.map((item) => (
+              {Accommodation_menu.map((item) => (
                 <NavigationMenuLink
-                  key={item.title}
+                  key={item.id}
+                  render={  <Link href={`/accommodation/${item.slug}`} />}
                   className="w-full p-3 my-2 cursor-pointer"
                 >
                   <div className="w-full flex justify-between items-center text-[12px]">
-                    <span className="ml-2">{item.title}</span>
-                    <span className="text-gray-500">{item.description}</span>
+                    <span className="ml-2">{item.name}</span>
+                    <span className="text-gray-500">{item.discount}</span>
                   </div>
                 </NavigationMenuLink>
               ))}
@@ -319,7 +282,7 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
 
         {/* 3 */}
-        <NavigationMenuItem>
+        <NavigationMenuItem className="cursor-pointer">
           <NavigationMenuTrigger>رزرو تور</NavigationMenuTrigger>
 
           <NavigationMenuContent>
@@ -327,10 +290,10 @@ export function NavigationMenuDemo() {
               {/* ستون سمت راست */}
               <div className="w-30 py-5 border-l *:text-[12px]!">
                 <div
-                  onMouseEnter={() => setActiveHotel("internal")}
+                  onMouseEnter={() => setActiveTour("internal")}
                   className={`cursor-pointer p-2  transition
             ${
-              activeHotel === "internal"
+              activeTour === "internal"
                 ? "bg-gray-100 text-red-500"
                 : "hover:bg-gray-50"
             }`}
@@ -339,10 +302,10 @@ export function NavigationMenuDemo() {
                 </div>
 
                 <div
-                  onMouseEnter={() => setActiveHotel("external")}
+                  onMouseEnter={() => setActiveTour("external")}
                   className={`cursor-pointer p-2 font-medium transition
             ${
-              activeHotel === "external"
+              activeTour === "external"
                 ? "bg-gray-100 text-red-500"
                 : "hover:bg-gray-50"
             }`}
@@ -353,9 +316,10 @@ export function NavigationMenuDemo() {
 
               {/* ستون لیست */}
               <div className="flex-1 p-6 w-87.5 ">
-                {(activeHotel === "internal" ? tour : foreigntour).map(
+                {(activeTour === "internal" ? tour : foreigntour).map(
                   (item) => (
                     <NavigationMenuLink
+                      render={<Link href={item.href} />}
                       key={item.title}
                       className="block cursor-pointer
              rounded-lg p-3 hover:bg-gray-100 text-[12px]"
@@ -388,12 +352,70 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
 
         {/* 4 */}
-        <NavigationMenuItem className="hidden lg:block">
+        <NavigationMenuItem className="hidden lg:block cursor-pointer">
           <NavigationMenuTrigger>رزرو پرواز</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="flex w-125 bg-white rounded-2xl">
+              {/* ستون سمت راست */}
+              <div className="w-30 py-5 border-l *:text-[12px]!">
+                <div
+                  onMouseEnter={() => setActiveFlight("internal")}
+                  className={`cursor-pointer p-2  transition
+            ${
+              activeTour === "internal"
+                ? "bg-gray-100 text-red-500"
+                : "hover:bg-gray-50"
+            }`}
+                >
+                  پرواز داخلی
+                </div>
+
+                <div
+                  onMouseEnter={() => setActiveFlight("external")}
+                  className={`cursor-pointer p-2 font-medium transition
+            ${
+              activeTour === "external"
+                ? "bg-gray-100 text-red-500"
+                : "hover:bg-gray-50"
+            }`}
+                >
+                  پرواز خارجی
+                </div>
+              </div>
+
+              {/* ستون لیست */}
+              <div className="flex-1 p-6 w-87.5 ">
+                {(activeFlight === "internal" ? Flight : foreignFlight).map(
+                  (item) => (
+                    <NavigationMenuLink
+                      render={<Link href={item.href} />}
+                      key={item.title}
+                      className="block cursor-pointer
+             rounded-lg p-3 hover:bg-gray-100 text-[12px]"
+                    >
+                      <span className="font-medium">{item.title}</span>
+                    </NavigationMenuLink>
+                  ),
+                )}
+
+                <div className="mt-6 text-center ">
+                  <Link
+                    href="#"
+                    className="text-blue-600 hover:underline text-[12px]"
+                  >
+                    مشاهده همه{" "}
+                    {activeFlight === "internal"
+                      ? "تور های داخلی"
+                      : "تور های خارجی"}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </NavigationMenuContent>
         </NavigationMenuItem>
 
         {/* 5 */}
-        <NavigationMenuItem className="hidden lg:block">
+        <NavigationMenuItem className="hidden lg:block cursor-pointer">
           <NavigationMenuTrigger>بلیط تفریحات</NavigationMenuTrigger>
           <NavigationMenuContent className="w-75">
             <div className="w-full p-3">
@@ -420,7 +442,7 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         {/* 6 */}
-        <NavigationMenuItem className="hidden xl:block">
+        <NavigationMenuItem className="hidden xl:block cursor-pointer">
           <NavigationMenuTrigger>بیشتر</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid  **:my-2 w-[200px]">

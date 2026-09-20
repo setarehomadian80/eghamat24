@@ -4,6 +4,7 @@ import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
+// import "./DataPicker.css"
 
 type MyDataPickerProps = {
   className?: string
@@ -37,7 +38,7 @@ export default function MyDatePicker({
             onFocus={openCalendar}
             readOnly
             // placeholder="تاریخ پرواز"
-            className={`w-full p-4 outline-none
+            className={`w-full p-4 outline-none cursor-pointer
               border text-[12px] ${className}`}
           />
         )}

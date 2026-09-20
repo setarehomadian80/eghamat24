@@ -6,7 +6,6 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
-import { name } from "react-date-object/calendars/julian";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 
@@ -98,7 +97,7 @@ export default function IranianHotelSlider() {
                 width={180}
                 height={260}
                 priority={index === 0}
-                className="w-full rounded-lg object-cover"
+                className="rounded-lg object-cover"
               />
 
               <p className="mt-2 text-center text-sm font-medium">

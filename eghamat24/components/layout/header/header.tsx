@@ -1,30 +1,12 @@
 import Image from "next/image";
 import { Phone, ReceiptText, Search, User } from "lucide-react";
-import { SheetDemo } from "./hamburgerMenu";
+import { SheetDemo } from "@/components/MobileMenu/hamburgerMenu";
 import { NavigationMenuDemo } from "./navigationMenuDemo";
 
 export default function Header() {
   return (
     <main className="w-full  xl:container mx-auto ">
       {/* banner */}
-      {/* <figure>
-        <div className="md:hidden">
-          <Image
-            src="/banners/world-cup-mobile.jpg"
-            alt="mobilebanner"
-            width={1200}
-            height={100}
-          />
-        </div>
-        <div className="hidden md:flex">
-          <Image
-            src="/banners/world-cup.jpg"
-            alt="mobilebanner"
-            width={1200}
-            height={100}
-          />
-        </div>
-      </figure> */}
       <div
         className="flex *:flex *:items-center!
        justify-between md:justify-start items-center py-5 px-5 xl:px-0"
