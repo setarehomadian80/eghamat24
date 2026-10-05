@@ -51,6 +51,7 @@ export default function HeroBanner() {
                 fill
                 priority={index === 0}
                 className="object-cover md:hidden"
+                sizes="(max-width: 768px) 100vw"
               />
 
               {/* Desktop */}
@@ -60,6 +61,7 @@ export default function HeroBanner() {
                 fill
                 priority={index === 0}
                 className="hidden md:block lg:object-cover"
+                sizes="(min-width: 768px) 100vw"
               />
 
             </div>

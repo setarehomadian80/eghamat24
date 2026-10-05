@@ -7,14 +7,23 @@ type Props = {
 export default function PropertyReviews({ title = "نظرات کاربران" }: Props) {
   return (
     <section className="mt-12" dir="rtl">
-      <h2 className="text-[20px] font-bold mb-8">{title}</h2>
+      <h2 
+      className="
+      text-[16px] 
+      md:text-[18px] 
+      xl:text-[20px] 
+      font-bold mb-8
+      ">{title}</h2>
 
       <div
         className="
-        grid
-        grid-cols-1
-        lg:grid-cols-4
+        flex
+        flex-col-reverse
+        lg:grid
+        lg:grid-cols-[1fr_320px]
         gap-6
+        relative
+        w-full
         "
       >
         {/* ================= Reviews ================= */}
@@ -22,9 +31,10 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
 
         <div
           className="
-          lg:col-span-3
           order-1
           space-y-5
+          w-full
+          min-w-0
           "
         >
           {reviews.map((review) => (
@@ -109,7 +119,7 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
 
                 <p
                   className="
-                  text-sm
+                  text-xs
                   leading-7
                   text-gray-700
                   "
@@ -137,7 +147,7 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
 
                 <p
                   className="
-                  text-sm
+                  text-xs
                   leading-7
                   text-gray-700
                   "
@@ -154,13 +164,15 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
 
         <aside
           className="
-          lg:col-span-1
+          lg:sticky
+          lg:top-10
           order-2
           border
           rounded-xl
           p-5
           bg-white
           h-fit
+          w-full
           "
         >
           <div
@@ -184,17 +196,19 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
                 bg-[#f5fcf9]
                 rounded-lg
                 px-4
-                py-2
+                py-1
                 text-center
                 flex
                 justify-between
                 items-center
+                md:hidden
+                lg:flex
                 "
               >
                 <p
                   className="
                   text-gray-500
-                  text-sm
+                  text-xs
                   "
                 >
                   امتیاز کلی کاربران
@@ -203,13 +217,13 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
                 <div
                   className="
                   text-green-600
-                  text-2xl
+                  text-lg
                   font-bold
                   mt-2
                   "
                 >
                   7.5
-                  <span className="text-sm">/10</span>
+                  <span className="text-xs">/10</span>
                 </div>
               </div>
 
@@ -218,6 +232,9 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
               <div
                 className="
                 mt-6
+                md:mt-0
+                lg:mt-8
+                lg:my-4
                 space-y-5
                 "
               >
@@ -253,13 +270,12 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
                       "
                     >
                       <span>{item.title}</span>
-
                       <span>{item.score}</span>
                     </div>
 
                     <div
                       className="
-                      h-[4px]
+                      h-1
                       bg-gray-200
                       rounded-full
                       "
@@ -282,10 +298,20 @@ export default function PropertyReviews({ title = "نظرات کاربران" }:
 
             {/* نوع سفر */}
 
-            <div>
+            <div
+              className="
+            md:flex
+            flex-col
+            justify-between
+            "
+            >
               <ul
                 className="
-                flex justify-between
+                flex
+                flex-wrap
+                md:*:w-1/2
+                md:gap-y-10
+                justify-between
                 items-center
                 
                 "

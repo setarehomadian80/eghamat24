@@ -1,4 +1,5 @@
 import hotels from "@/data/hotels.json";
+import tours from "@/data/tour.json";
 import accommodations from "@/data/accommodation.json";
 import detailHotels from "@/data/detailHotel.json";
 import detailAccommodation from "@/data/detailAccommodation.json";
@@ -24,14 +25,16 @@ import PropertyRules from "../../PropertyRules";
 import PropertyDistance from "../../PropertyDistance";
 import AmenitiesAndReviews from "../../AmenitiesAndReviews";
 import PropertyReviews from "../../PropertyReviews";
+import PropertySimilarHotels from "../../PropertySimilarHotels";
+import PropertyQuestions from "../../PropertyQuestions";
+import PropertyCategories from "../../PropertyCategories";
+import PropertyDescription from "../../PropertyDescription";
 ;
-
-
 
 
 type Props = {
   params: Promise<{
-    type: "hotel" | "accommodation";
+    type: "hotel" | "accommodation" | "tour";
     slug: string;
   }>;
 };
@@ -55,11 +58,13 @@ export default async function Page({ params }: Props) {
 
   let property;
 
-  if (type === "hotel") {
-    property = hotels.find((item) => item.slug === slug);
-  } else {
-    property = accommodations.find((item) => item.slug === slug);
-  }
+if (type === "hotel") {
+  property = hotels.find((item) => item.slug === slug);
+} else if (type === "accommodation") {
+  property = accommodations.find((item) => item.slug === slug);
+} else {
+  property = tours.find((item) => item.slug === slug);
+}
 
   if (!property) {
     notFound();
@@ -142,6 +147,14 @@ export default async function Page({ params }: Props) {
         <AmenitiesAndReviews slug={slug} type={type} />
         {/* PropertyReviews */}
         <PropertyReviews />
+        {/* SimilarHotels */}
+        <PropertySimilarHotels slug={slug} type={type}/>
+        {/* PropertyQuestions */}
+        <PropertyQuestions slug={slug} type={type}/>
+        {/* PropertyCategories */}
+        <PropertyCategories slug={slug} type={type}/>
+        {/* PropertyMoreInFormation */}
+        <PropertyDescription />
         {/* end main box */}
       </div>
     </div>

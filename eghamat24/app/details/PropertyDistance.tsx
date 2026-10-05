@@ -3,12 +3,14 @@
 import { useState } from "react";
 import citiesAccommodation from "@/data/citiesAccommodation.json";
 import citiesHotel from "@/data/citiesHotel.json";
+import citiesTour from "@/data/citiestour.json";
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
+import tours from "@/data/tour.json";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation";
+  type: "hotel" | "accommodation" | "tour";
 };
 
 const Locations = [
@@ -41,14 +43,18 @@ export default function PropertyDistance({ slug, type }: Props) {
   const property =
     type === "hotel"
       ? hotels.find((item) => item.slug === slug)
-      : accommodation.find((item) => item.slug === slug);
+      : type === "accommodation"
+        ? accommodation.find((item) => item.slug === slug)
+        : tours.find((item) => item.slug === slug);
 
   if (!property) return null;
 
   const city =
     type === "hotel"
       ? citiesHotel.find((item) => item.cityId === property.cityId)
-      : citiesAccommodation.find((item) => item.cityId === property.cityId);
+      : type === "accommodation"
+        ? citiesAccommodation.find((item) => item.cityId === property.cityId)
+        : citiesTour.find((item) => item.cityId === property.cityId);
 
   if (!city) return null;
 
@@ -57,9 +63,20 @@ export default function PropertyDistance({ slug, type }: Props) {
   return (
     <main className="mt-10">
       <div>
-        <strong>فاصله تا مکان های مهم شهر</strong>
-        <div className="grid grid-cols-1 lg:grid-cols-3
-         gap-10 mt-6 text-[12px] md:text-[14px]">
+        <strong
+          className="
+        text-[16px] 
+        md:text-[18px] 
+        xl:text-[20px]
+        "
+        >
+          فاصله تا مکان های مهم شهر
+        </strong>
+
+        <div
+          className="grid grid-cols-1 lg:grid-cols-3
+         gap-10 mt-6 text-[12px] md:text-[14px]"
+        >
           {/* description */}
           <div className="lg:col-span-2">
             {/* head */}
@@ -74,6 +91,7 @@ export default function PropertyDistance({ slug, type }: Props) {
               >
                 مهم ترین مکان ها
               </button>
+
               <button
                 onClick={() => setActiveBox("نزدیک ترین مکان ها")}
                 className={`px-4 py-2 ${
@@ -85,12 +103,15 @@ export default function PropertyDistance({ slug, type }: Props) {
                 نزدیک ترین مکان ها
               </button>
             </div>
+
             {/* body */}
+
             {/* box 1 */}
             {activeBox === "مهم ترین مکان ها" && (
               <div className="h-75 px-5">
                 <div className="flex flex-wrap gap-2 justify-between my-5">
                   <span>نمایشگاه بین المللی</span>
+
                   <p className="flex gap-5">
                     <span>13 دقیقه با خودرو</span>
                     <span>6 کیلومتر مسافت</span>
@@ -98,12 +119,17 @@ export default function PropertyDistance({ slug, type }: Props) {
                 </div>
               </div>
             )}
+
             {/* box 2 */}
             {activeBox === "نزدیک ترین مکان ها" && (
               <div className="h-75 overflow-y-auto scrollbar-thin px-5">
                 {Locations.map((item) => (
-                  <div className="flex flex-wrap gap-2 justify-between my-5" key={item.place}>
+                  <div
+                    className="flex flex-wrap gap-2 justify-between my-5"
+                    key={item.place}
+                  >
                     <span>{item.place}</span>
+
                     <p className="flex gap-5">
                       <span>{item.min}</span>
                       <span>{item.Distance}</span>
@@ -112,8 +138,8 @@ export default function PropertyDistance({ slug, type }: Props) {
                 ))}
               </div>
             )}
-            
           </div>
+
           {/* ============== map ==============*/}
           <div className="w-full h-75 lg:mt-10 lg:col-span-1 rounded-lg overflow-hidden">
             <iframe

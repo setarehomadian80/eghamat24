@@ -2,6 +2,7 @@
   {
     "id": 1,
     "cityId": 1,
+    "city" : "مشهد",
     "name": "هتل‌های مشهد",
     "discount": "تخفیف تا 61%",
     "slug": "MashhadHotels",
@@ -15,6 +16,7 @@
   {
     "id": 2,
     "cityId": 12,
+    "city" : "کیش",
     "name": "هتل‌های کیش",
     "discount": "تخفیف تا 36%",
     "slug": "KishHotels",
@@ -28,6 +30,7 @@
   {
     "id": 3,
     "cityId": 2,
+    "city" : "تهران",
     "name": "هتل‌های تهران",
     "discount": "تخفیف تا 41%",
     "slug": "TehranHotels",
@@ -41,6 +44,7 @@
   {
     "id": 4,
     "cityId": 9,
+    "city" : "قشم",
     "name": "هتل‌های قشم",
     "discount": "تخفیف تا 50%",
     "slug": "QeshmHotels",
@@ -54,6 +58,7 @@
   {
     "id": 5,
     "cityId": 3,
+    "city" : "شیراز",
     "name": "هتل‌های شیراز",
     "discount": "تخفیف تا 56%",
     "slug": "ShirazHotels",
@@ -67,6 +72,7 @@
   {
     "id": 6,
     "cityId": 4,
+    "city" : "اصفهان",
     "name": "هتل‌های اصفهان",
     "discount": "تخفیف تا 35%",
     "slug": "EsfahanHotels",
@@ -80,6 +86,7 @@
   {
     "id": 7,
     "cityId": 5,
+    "city" : "یزد",
     "name": "هتل‌های یزد",
     "discount": "تخفیف تا 75%",
     "slug": "YazdHotels",
@@ -93,6 +100,7 @@
   {
     "id": 8,
     "cityId": 21,
+    "city" : "تبریز",
     "name": "هتل‌های تبریز",
     "discount": "تخفیف تا 23%",
     "slug": "TabrizHotels",
@@ -106,6 +114,7 @@
   {
     "id": 9,
     "cityId": 26,
+    "city" : "استانبول",
     "name": "هتل های استانبول",
     "discount": "تخفیف تا 24%",
     "slug": "IstanbulHotels",
@@ -119,6 +128,7 @@
   {
     "id": 10,
     "cityId": 27,
+    "city" : "وان",
     "name": "هتل های وان",
     "discount": "تخفیف تا 33%",
     "slug": "VanHotels",
@@ -132,6 +142,7 @@
   {
     "id": 11,
     "cityId": 28,
+    "city" : "دبی",
     "name": "هتل های دبی",
     "discount": "تخفیف تا 50%",
     "slug": "DubaiHotels",
@@ -146,6 +157,7 @@
   {
     "id": 13,
     "cityId": 30,
+    "city" : "کربلا",
     "name": "هتل های کربلا",
     "discount": "تخفیف تا 61%",
     "slug": "KarbalaHotels",

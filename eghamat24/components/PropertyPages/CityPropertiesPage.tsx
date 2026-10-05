@@ -27,27 +27,39 @@ type CityData = {
 };
 export interface Property {
   id: number;
+
   name: string;
+
   slug: string;
+
   cityId: number;
-  address: string;
-  stars: number;
+
   price: string;
+
   discount: string;
-  rating: string;
-  reviewCount: number;
+
   image: string;
-  area: string;
-  amenities: string[];
-  beds: number;
-  mealPlan: string;
-  badge: string;
+
+  // hotel / accommodation
+  address?: string;
+  stars?: number;
+  rating?: string;
+  reviewCount?: number;
+  area?: string;
+  amenities?: string[];
+  beds?: number;
+  mealPlan?: string;
+  badge?: string;
+
+  // tour
+  duration?: string;
+  transport?: string;
 }
 
 type Props = {
   city: CityData;
   properties: Property[];
-  type: "hotel" | "accommodation";
+  type: "hotel" | "accommodation" | "tour";
 };
 
 export default function CityPropertiesPage({ city, properties, type }: Props) {
@@ -59,8 +71,9 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
     return Number(price.replace(/\./g, "").replace("تومان", "").trim());
   };
 
-  const getRate = (rating: string) => {
-    // "9.1/10" => 9.1
+  const getRate = (rating?: string) => {
+    if (!rating) return 0;
+
     return Number(rating.split("/")[0]);
   };
 
@@ -84,16 +97,24 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
   const [selectedAmenities, setSelectedAmenities] = useState<string[]>([]);
 
   const areas = Array.from(
-    new Set(properties.map((property) => property.area).filter(Boolean)),
+    new Set(
+      properties
+        .map((property) => property.area)
+        .filter((area): area is string => Boolean(area)),
+    ),
   );
   // search
   const searchFilteredProperties = properties.filter((property) =>
     property.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
   // stars
-  const starFilteredHotels = searchFilteredProperties.filter((property) =>
-    selectedStars.length === 0 ? true : selectedStars.includes(property.stars),
-  );
+  const starFilteredHotels = searchFilteredProperties.filter((property) => {
+    if (selectedStars.length === 0) {
+      return true;
+    }
+
+    return selectedStars.includes(property.stars ?? 0);
+  });
   // Rating
   const ratingFilteredHotels = starFilteredHotels.filter((property) => {
     const rating = getRate(property.rating);
@@ -122,7 +143,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       return true;
     }
 
-    return selectedBeds.includes(property.beds);
+    return selectedBeds.includes(property.beds ?? 0);
   });
   // food
   const mealPlanFilteredHotels = BedFilteredHotels.filter((property) => {
@@ -130,14 +151,14 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       return true;
     }
 
-    return selectedFood.includes(property.mealPlan);
+    return selectedFood.includes(property.mealPlan ?? "");
   });
   // area
   const areaFilteredHotels = mealPlanFilteredHotels.filter((property) => {
     if (selectedAreas.length === 0) {
       return true;
     }
-    return selectedAreas.includes(property.area);
+    return selectedAreas.includes(property.area ?? "");
   });
   // amenities
   const amenitiesFilteredHotels = areaFilteredHotels.filter((property) => {
@@ -146,7 +167,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
     }
 
     return selectedAmenities.every((amenity) =>
-      property.amenities.includes(amenity),
+      property.amenities?.includes(amenity),
     );
   });
   // price
@@ -161,7 +182,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       return true;
     }
 
-    return selectedBadges.includes(property.badge);
+    return selectedBadges.includes(property.badge ?? "");
   });
 
   const sortedProperties = [...badgeFilteredHotels].sort((a, b) => {
@@ -205,7 +226,13 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
         {/* text */}
         <div className="flex-1 flex flex-col justify-evenly gap-4">
           <p>
-            لیست {} <span>{city.name}</span>
+            لیست{" "}
+            {type === "hotel"
+              ? "هتل‌های"
+              : type === "accommodation"
+                ? "اقامتگاه‌های"
+                : "تورهای"}{" "}
+            <span>{city.name}</span>
           </p>
           <div
             className="flex justify-between
@@ -247,11 +274,11 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
             نقشه
           </button>
         </div>
-        {/*پایان فیلتر و مرتب سازی  و نقشه در موبایل */}
 
         {/* باکس فیلتر در سمت راست صفحه  */}
         <div className="hidden lg:block lg:sticky right-0 top-0 self-start">
           <PropertyFilterSidebar
+            type={type}
             areas={areas}
             selectedStars={selectedStars}
             setSelectedStars={setSelectedStars}
@@ -343,6 +370,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       <div>
         <div>
           <PropertyFilterSidebar
+            type={type}
             className={`fixed top-0 bottom-0 right-0 w-full! z-50 md:hidden
             transition-transform duration-300 ease-out
             ${activeSheet === "filter" ? "translate-x-0" : "translate-x-full"}`}
@@ -415,7 +443,14 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
           <button onClick={() => setActiveSheet(null)} aria-label="بستن نقشه">
             <ArrowRight size={20} />
           </button>
-          <span className="font-bold">نقشه هتل‌ها</span>
+          <span className="font-bold">
+            نقشه{" "}
+            {type === "hotel"
+              ? "هتل‌ها"
+              : type === "accommodation"
+                ? "اقامتگاه‌ها"
+                : "تورها"}
+          </span>
           <span className="w-5" />
         </div>
         <div className="h-[calc(100%-64px)]">

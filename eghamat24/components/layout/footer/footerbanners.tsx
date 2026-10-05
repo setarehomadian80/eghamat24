@@ -81,9 +81,15 @@ export default function FooterBanners() {
               >
                 اپلیکیشن
               </h2>
-              <Image
-              className="object-contain"
-              src="/logo.png" width={80} height={10} alt="logo"/>
+              <div className="relative w-20 h-10">
+                <Image
+                  src="/logo.png"
+                  alt="logo"
+                  fill
+                  sizes="80px"
+                  className="object-contain"
+                />
+              </div>
             </div>
 
             <p className="mt-4 text-[12px] leading-7 text-[#666]">

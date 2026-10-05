@@ -86,19 +86,21 @@ export default function IranianHotelSlider() {
             slidesPerView: 6,
           },
         }}
-        className="rounded-xl overflow-hidden"
+        className="rounded-xl "
       >
         {banners.map((banner, index) => (
           <SwiperSlide key={index}>
-            <div className="relative">
-              <Image
-                src={banner.linkHotel}
-                alt={banner.title}
-                width={180}
-                height={260}
-                priority={index === 0}
-                className="rounded-lg object-cover"
-              />
+            <div>
+              <div className="relative h-[140px] md:h-[200px] lg:h-[260px] overflow-hidden rounded-lg">
+                <Image
+                  src={banner.linkHotel}
+                  alt={banner.title}
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16vw"
+                  className="object-cover"
+                />
+              </div>
 
               <p className="mt-2 text-center text-sm font-medium">
                 {banner.title}

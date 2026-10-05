@@ -1,5 +1,6 @@
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
+import tours from "@/data/tour.json";
 
 import {
   DoorOpen,
@@ -19,7 +20,7 @@ type RulesItem = {
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation";
+  type: "hotel" | "accommodation" | "tour";
 };
 
 const PropertyRulesItem: RulesItem[] = [
@@ -55,13 +56,22 @@ export default function PropertyRules({ slug, type }: Props) {
   const property =
     type === "hotel"
       ? hotels.find((item) => item.slug === slug)
-      : accommodation.find((item) => item.slug === slug);
+      : type === "accommodation"
+        ? accommodation.find((item) => item.slug === slug)
+        : tours.find((item) => item.slug === slug);
 
   if (!property) return null;
 
   return (
     <main className="mt-12">
-      <strong>قوانین {property.name} </strong>
+      <strong
+        className="
+        text-[16px] md:text-[18px] xl:text-[20px]
+        "
+      >
+        قوانین {property.name}
+      </strong>
+
       <div
         className="
         mt-6
@@ -76,18 +86,23 @@ export default function PropertyRules({ slug, type }: Props) {
           const Icon = item.icon;
 
           return (
-            <div 
-            key={item.title}
-            className="
-            border 
-            rounded-lg
-            p-5
-            text-[12px]
-            flex flex-col
-            gap-4
-            ">
-              <Icon size={26} className="text-gray-500 "/>
-              <h2 className="text-[14px]">{item.title}</h2>
+            <div
+              key={item.title}
+              className="
+              border 
+              rounded-lg
+              p-5
+              text-[12px]
+              flex flex-col
+              gap-4
+              "
+            >
+              <Icon size={26} className="text-gray-500 " />
+
+              <h2 className="text-[14px] md:text-[16px] xl:text-[18px]">
+                {item.title}
+              </h2>
+
               <p className="text-gray-500 leading-6">{item.des}</p>
             </div>
           );

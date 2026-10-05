@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export default function BannerLeft() {
   return (
@@ -18,6 +17,7 @@ export default function BannerLeft() {
             fill
             alt="2Banner"
             className="rounded-lg object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
         </Link>
 
@@ -30,6 +30,7 @@ export default function BannerLeft() {
             fill
             alt="2Banners"
             className="rounded-lg object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
         </Link>
       </div>

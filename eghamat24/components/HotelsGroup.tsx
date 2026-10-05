@@ -80,6 +80,7 @@ export default function HotelsGroup() {
               alt="هتل"
               fill
               className="object-contain"
+              sizes="150px"
             />
           </div>
         ))}
@@ -97,6 +98,7 @@ export default function HotelsGroup() {
               alt="هتل"
               fill
               className="object-contain"
+              sizes="150px"
             />
           </div>
         ))}

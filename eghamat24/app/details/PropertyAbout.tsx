@@ -15,7 +15,9 @@ export default function AboutProperty({
   return (
     <div className="mt-6 *:mt-6 text-gray-600 text-[12px]">
       
-      <h2 className="text-black text-[16px]">
+      <h2 className="text-black 
+      text-[16px] md:text-[18px] xl:text-[20px]
+      ">
         {title}
       </h2>
 

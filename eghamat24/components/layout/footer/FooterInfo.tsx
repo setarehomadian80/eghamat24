@@ -9,13 +9,15 @@ export default function FooterInfo() {
         <div className="md:grid md:grid-cols-2 xl:grid-cols-1 gap-5 pb-10 border-b xl:col-span-1">
           {/* text */}
           <div>
-            <Image
-              className="object-contain"
-              src="/logo.png"
-              width={80}
-              height={10}
-              alt="logo"
-            />
+            <div className="relative w-20 h-10">
+              <Image
+                src="/logo.png"
+                alt="logo"
+                fill
+                sizes="80px"
+                className="object-contain"
+              />
+            </div>
             <p>
               اقامت24 به عنوان اولین مرکز رسمی رزرواسیون هتل در ایران از سال
               1385 فعالیت خود را آغاز کرده و در حال حاضر علاوه‌بر رزرو هتل داخلی
@@ -134,9 +136,7 @@ export default function FooterInfo() {
         </div>
         {/* 2 */}
         <div className="xl:grid xl:grid-cols-2 pt-10 border-b pb-10 xl:col-span-2 xl:gap-10">
-
           <div className="flex justify-between md:justify-around">
-
             <div className="flex flex-col gap-4">
               <strong className="text-[12px]">اقامت 24</strong>
               <span>رزرو هتل</span>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
+import tours from "@/data/tour.json";
 import hotels from "@/data/hotels.json";
 import detailHotels from "@/data/detailHotel.json";
 import detailAccommodation from "@/data/detailAccommodation.json";
@@ -16,52 +17,52 @@ import "swiper/css/pagination";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation";
+  type: "hotel" | "accommodation" | "tour";
 };
 
 export default function HotelGallery({ slug, type }: Props) {
-
-
   const hotel = hotels.find((item) => item.slug === slug);
+
+  const tour = tours.find((item) => item.slug === slug);
 
   const detail =
     type === "hotel"
       ? detailHotels.find((item) => item.slug === slug)
-      : detailAccommodation.find((item) => item.slug === slug);
-
+      : type === "accommodation"
+        ? detailAccommodation.find((item) => item.slug === slug)
+        : null;
 
   const [showGallery, setShowGallery] = useState(false);
 
-
-  if (!detail) return null;
-
+  if (!detail && type !== "tour") return null;
 
   const mainImage =
     type === "hotel"
       ? hotel?.image
-      : detail.gallery[0];
-
+      : type === "accommodation"
+        ? detail?.gallery[0]
+        : tour?.image;
 
   if (!mainImage) return null;
 
-
   const images = [
     mainImage,
-    ...detail.gallery.filter((img) => img !== mainImage),
+    ...(type === "tour"
+      ? []
+      : detail?.gallery.filter((img) => img !== mainImage) ?? []),
   ];
-
 
   const propertyName =
     type === "hotel"
       ? hotel?.name || ""
-      : detail.title;
-
+      : type === "accommodation"
+        ? detail?.title || ""
+        : tour?.name || "";
 
   const [activeImage, setActiveImage] = useState(images[0]);
 
-
   // نمایش گالری کامل
-  if (showGallery) {
+  if (showGallery && type !== "tour") {
     return (
       <GalleryList
         slug={slug}
@@ -72,15 +73,11 @@ export default function HotelGallery({ slug, type }: Props) {
     );
   }
 
-
   return (
     <section className="w-full overflow-hidden">
-
-
       {/* ================= موبایل ================= */}
 
       <div className="block md:hidden">
-
         <Swiper
           modules={[Autoplay, Pagination]}
           slidesPerView={1}
@@ -93,13 +90,9 @@ export default function HotelGallery({ slug, type }: Props) {
             clickable: true,
           }}
         >
-
           {images.map((image, index) => (
-
             <SwiperSlide key={index}>
-
               <div className="relative h-[250px] w-full">
-
                 <Image
                   src={image}
                   alt={propertyName}
@@ -108,18 +101,11 @@ export default function HotelGallery({ slug, type }: Props) {
                   sizes="100vw"
                   className="object-cover!"
                 />
-
               </div>
-
             </SwiperSlide>
-
           ))}
-
         </Swiper>
-
       </div>
-
-
 
       {/* ================= تبلت و دسکتاپ ================= */}
 
@@ -136,12 +122,9 @@ export default function HotelGallery({ slug, type }: Props) {
           md:mt-10
         "
       >
-
-
         {/* عکس بزرگ */}
 
         <div className="relative col-span-2">
-
           <Image
             src={activeImage}
             alt={propertyName}
@@ -150,24 +133,17 @@ export default function HotelGallery({ slug, type }: Props) {
             sizes="60vw"
             className="rounded-xl object-cover"
           />
-
         </div>
-
-
 
         {/* عکس های کوچک */}
 
         <div className="grid grid-cols-2 gap-2 col-span-2 relative">
-
-
           {images.slice(1, 5).map((image, index) => (
-
             <button
               key={index}
               onClick={() => setActiveImage(image)}
               className="relative overflow-hidden rounded-xl"
             >
-
               <Image
                 src={image}
                 alt={`${propertyName}-${index}`}
@@ -184,12 +160,8 @@ export default function HotelGallery({ slug, type }: Props) {
                   }
                 `}
               />
-
             </button>
-
           ))}
-
-
 
           {/* دکمه مشاهده همه */}
 
@@ -213,14 +185,8 @@ export default function HotelGallery({ slug, type }: Props) {
           >
             مشاهده همه
           </button>
-
-
         </div>
-
-
       </div>
-
-
     </section>
   );
 }

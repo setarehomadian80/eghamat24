@@ -68,6 +68,7 @@ export default function Blog() {
                   alt={item.title}
                   fill
                   className="object-cover"
+                  sizes="128px"
                 />
               </div>
             </article>

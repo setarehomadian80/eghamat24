@@ -2,6 +2,7 @@
   {
     "id": 1,
     "cityId": 1,
+    "city" : "مشهد",
     "name": "اقامتگاه‌های مشهد",
     "discount": "تخفیف تا 45%",
     "slug": "MashhadStays",
@@ -14,7 +15,8 @@
   },
   {
     "id": 2,
-    "cityId": 12,
+    "cityId": 2,
+    "city" : "کاشان",
     "name": "اقامتگاه‌های کاشان",
     "discount": "تخفیف تا 30%",
     "slug": "KashanStays",
@@ -27,7 +29,8 @@
   },
   {
     "id": 3,
-    "cityId": 2,
+    "cityId": 3,
+    "city" : "تهران",
     "name": "اقامتگاه‌های تهران",
     "discount": "تخفیف تا 25%",
     "slug": "TehranStays",
@@ -40,7 +43,8 @@
   },
   {
     "id": 4,
-    "cityId": 9,
+    "cityId":4,
+    "city" : "قشم",
     "name": "اقامتگاه‌های قشم",
     "discount": "تخفیف تا 40%",
     "slug": "QeshmStays",
@@ -53,7 +57,8 @@
   },
   {
     "id": 5,
-    "cityId": 3,
+    "cityId":5,
+    "city" : "شیراز",
     "name": "اقامتگاه‌های شیراز",
     "discount": "تخفیف تا 50%",
     "slug": "ShirazStays",
@@ -66,7 +71,8 @@
   },
   {
     "id": 6,
-    "cityId": 4,
+    "cityId": 6,
+    "city" : "اصفهان",
     "name": "اقامتگاه‌های اصفهان",
     "discount": "تخفیف تا 33%",
     "slug": "EsfahanStays",
@@ -79,7 +85,8 @@
   },
   {
     "id": 7,
-    "cityId": 5,
+    "cityId": 7,
+    "city" : "یزد",
     "name": "اقامتگاه‌های یزد",
     "discount": "تخفیف تا 60%",
     "slug": "YazdStays",
@@ -92,7 +99,8 @@
   },
   {
     "id": 8,
-    "cityId": 21,
+    "cityId": 8,
+    "city" : "رشت",
     "name": "اقامتگاه‌های رشت",
     "discount": "تخفیف تا 20%",
     "slug": "RashtStays",

@@ -2,14 +2,18 @@ import { SquareArrowOutUpRight } from "lucide-react";
 
 type Props = {
   property: {
-    stars: number;
-    reviewCount: number;
-    rating: string;
+    stars?: number;
+    reviewCount?: number;
+    rating?: string;
     name: string;
-    address: string;
+    address?: string;
+
+    // tour
+    duration?: string;
+    transport?: string;
   };
 
-  type: "hotel" | "accommodation";
+  type: "hotel" | "accommodation" | "tour";
 };
 
 export default function PropertyBoxes({ property }: Props) {

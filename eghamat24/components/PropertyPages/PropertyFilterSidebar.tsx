@@ -5,6 +5,7 @@ import { useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
 
 type Props = {
+  type: "hotel" | "accommodation" | "tour";
   areas: string[];
 
   selectedStars: number[];
@@ -42,6 +43,7 @@ type Props = {
 };
 
 export default function PropertyFilterSidebar({
+  type,
   areas,
   selectedStars,
   setSelectedStars,
@@ -117,7 +119,12 @@ export default function PropertyFilterSidebar({
         <button onClick={onClose} aria-label="بستن فیلتر" className="md:hidden">
           <ArrowRight size={18} />
         </button>
-        فیلتر های هتل
+
+        {type === "hotel"
+          ? "فیلتر های هتل"
+          : type === "accommodation"
+            ? "فیلتر های اقامتگاه"
+            : "فیلتر های تور"}
       </h1>
 
       {/* باکس فیلتر ها به صورت جدا برای اسکرول */}

@@ -1,35 +1,29 @@
-// "use client"
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Laugh } from "lucide-react";
 import Link from "next/link";
+import type { Property } from "./CityPropertiesPage";
 
 type Props = {
-  type: "hotel" | "accommodation";
+  type: "hotel" | "accommodation" | "tour";
 
-  property: {
-    id: number;
-    slug: string;
-    name: string;
-    image: string;
-    stars: number;
-    reviewCount: number;
-    rating: string;
-    address: string;
-    price: string;
-    discount: string;
-  };
+  property: Property;
 };
 
-export default function PropertyCard({ property , type  }: Props) {
-
-
+export default function PropertyCard({ property, type }: Props) {
   return (
-   <Link href={`/details/${type}/${property.slug}`}>
+    <Link
+      href={
+        type === "tour"
+          ? `/details/tour/${property.slug}`
+          : `/details/${type}/${property.slug}`
+      }
+    >
       <Card className="rounded-xl! shadow-none! cursor-pointer">
         <CardMedia
+        component="img"
           image={property.image}
           title={property.name}
           sx={{
@@ -39,27 +33,37 @@ export default function PropertyCard({ property , type  }: Props) {
         />
 
         <CardContent>
-          <div className="flex items-center justify-between">
-            <div className="text-[#f6b100]">{"★".repeat(property.stars)}</div>
+          {/* فقط هتل و اقامتگاه */}
 
-            <div className="flex items-center gap-1">
-              <span className="text-xs text-gray-500">
-                {property.reviewCount}
-              </span>
+          {type !== "tour" && (
+            <div className="flex items-center justify-between">
+              <div className="text-[#f6b100]">
+                {"★".repeat(property.stars ?? 0)}
+              </div>
 
-              <span className="flex items-center text-xs font-bold">
-                {property.rating}
-                <Laugh size={16} className="mr-1 text-green-500" />
-              </span>
+              <div className="flex items-center gap-1">
+                <span className="text-xs text-gray-500">
+                  {property.reviewCount ?? 0}
+                </span>
+
+                <span className="flex items-center text-xs font-bold">
+                  {property.rating}
+
+                  <Laugh size={16} className="mr-1 text-green-500" />
+                </span>
+              </div>
             </div>
-          </div>
+          )}
 
           <Typography
             className="line-clamp-1"
             sx={{
               mt: 1,
+
               fontFamily: "var(--font-iransans)",
+
               fontSize: "15px",
+
               fontWeight: 700,
             }}
           >
@@ -70,18 +74,25 @@ export default function PropertyCard({ property , type  }: Props) {
             className="line-clamp-1"
             sx={{
               mt: 1,
+
               color: "text.secondary",
+
               fontSize: "12px",
+
               fontFamily: "var(--font-iransans)",
             }}
           >
-            {property.address}
+            {type === "tour"
+              ? `${property.duration ?? ""} - ${property.transport ?? ""}`
+              : property.address}
           </Typography>
 
           <Typography
             sx={{
               mt: 2,
+
               fontFamily: "var(--font-iransans)",
+
               fontSize: "13px",
             }}
           >

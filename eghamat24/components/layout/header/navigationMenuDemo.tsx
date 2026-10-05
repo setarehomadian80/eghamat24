@@ -3,7 +3,8 @@
 import * as React from "react";
 import citiesHotel from "@/data/citiesHotel.json";
 import Link from "next/link";
-import citiesAccommodation from "@/data/citiesAccommodation.json"
+import citiesAccommodation from "@/data/citiesAccommodation.json";
+import citiesTour from "@/data/citiestour.json";
 
 import {
   NavigationMenu,
@@ -34,78 +35,27 @@ type city_Accommodation = {
   href: string;
 };
 
+type TourMenu = {
+  id: number;
+  cityId: number;
+  city: string;
+  name: string;
+  discount: string;
+  slug: string;
+  href: string;
+  type: "iran" | "foreign";
+};
+
+const tour_menu = citiesTour as TourMenu[];
 const hotel_menu = citiesHotel as city_hotel[];
 const Accommodation_menu = citiesAccommodation as city_Accommodation[];
 
 const iranCities = hotel_menu.filter((city) => city.type === "iran");
 const foreignCities = hotel_menu.filter((city) => city.type === "foreign");
-
+const iranTours = tour_menu.filter((item) => item.type === "iran");
+const foreignTours = tour_menu.filter((item) => item.type === "foreign");
 
 ///////////////////////////
-const tour: { title: string; href: string; description: string }[] = [
-  {
-    title: "تور کیش",
-    href: "/KishTours.html",
-    description: "تخفیف تا 90%",
-  },
-  {
-    title: "تور مشهد",
-    href: "/MashhadTours.html",
-    description: "تخفیف تا 92 %",
-  },
-  {
-    title: "تور قشم",
-    href: "/QeshmTours.html",
-    description: "تخفیف تا 69 %",
-  },
-  {
-    title: "تور چابهار",
-    href: "/ChabaharTours.html",
-    description: "تخفیف تا 84  %",
-  },
-  {
-    title: "تور شیراز",
-    href: "/ShirazTours.html",
-    description: "تخفیف تا 64 %",
-  },
-  {
-    title: "تور اصفهان",
-    href: "/EsfahanTours.html",
-    description: "تخفیف تا 68 %",
-  },
-];
-const foreigntour = [
-  {
-    title: "تور دبی",
-    href: "/DubaiTours.html",
-    description: "تخفیف تا 24%",
-  },
-  {
-    title: "تور استانبول",
-    href: "/IstanbulTours.html",
-    description: "تخفیف تا 33%",
-  },
-  {
-    title: "تور آنتالیا",
-    href: "/AntalyaTours.html",
-    description: "تخفیف تا 50%",
-  },
-  {
-    title: "تور ایروان",
-    href: "/YerevanTours.html",
-    description: "تخفیف تا 18%",
-  },
-  {
-    title: "تور تفلیس",
-    href: "/TbilisiTours.html",
-    description: "تخفیف تا 8%",
-  },
-  {
-    title: "تور نجف",
-    href: "/NajafTours.html",
-    description: "تخفیف تا 18%",
-  },
-];
 const Flight: { title: string; href: string }[] = [
   {
     title: "بلیط هواپیما تهران",
@@ -217,10 +167,9 @@ export function NavigationMenuDemo() {
               <div className="flex-1 p-6 w-87.5 ">
                 {(activeHotel === "internal" ? iranCities : foreignCities).map(
                   (item) => (
-                    
                     <NavigationMenuLink
                       key={item.id}
-                      render={  <Link href={`/hotel/${item.slug}`} />}
+                      render={<Link href={`/hotel/${item.slug}`} />}
                       className="block cursor-pointer
              rounded-lg p-3 hover:bg-gray-100 text-[12px]"
                     >
@@ -260,7 +209,7 @@ export function NavigationMenuDemo() {
               {Accommodation_menu.map((item) => (
                 <NavigationMenuLink
                   key={item.id}
-                  render={  <Link href={`/accommodation/${item.slug}`} />}
+                  render={<Link href={`/accommodation/${item.slug}`} />}
                   className="w-full p-3 my-2 cursor-pointer"
                 >
                   <div className="w-full flex justify-between items-center text-[12px]">
@@ -291,12 +240,12 @@ export function NavigationMenuDemo() {
               <div className="w-30 py-5 border-l *:text-[12px]!">
                 <div
                   onMouseEnter={() => setActiveTour("internal")}
-                  className={`cursor-pointer p-2  transition
-            ${
-              activeTour === "internal"
-                ? "bg-gray-100 text-red-500"
-                : "hover:bg-gray-50"
-            }`}
+                  className={`cursor-pointer p-2 transition
+          ${
+            activeTour === "internal"
+              ? "bg-gray-100 text-red-500"
+              : "hover:bg-gray-50"
+          }`}
                 >
                   تور های داخلی
                 </div>
@@ -304,44 +253,48 @@ export function NavigationMenuDemo() {
                 <div
                   onMouseEnter={() => setActiveTour("external")}
                   className={`cursor-pointer p-2 font-medium transition
-            ${
-              activeTour === "external"
-                ? "bg-gray-100 text-red-500"
-                : "hover:bg-gray-50"
-            }`}
+          ${
+            activeTour === "external"
+              ? "bg-gray-100 text-red-500"
+              : "hover:bg-gray-50"
+          }`}
                 >
                   تور های خارجی
                 </div>
               </div>
 
               {/* ستون لیست */}
-              <div className="flex-1 p-6 w-87.5 ">
-                {(activeTour === "internal" ? tour : foreigntour).map(
+              <div className="flex-1 p-6 w-87.5">
+                {(activeTour === "internal" ? iranTours : foreignTours).map(
                   (item) => (
                     <NavigationMenuLink
+                      key={item.id}
                       render={<Link href={item.href} />}
-                      key={item.title}
-                      className="block cursor-pointer
-             rounded-lg p-3 hover:bg-gray-100 text-[12px]"
+                      className="
+              block cursor-pointer
+              rounded-lg p-3
+              hover:bg-gray-100
+              text-[12px]
+            "
                     >
                       <div className="flex justify-between">
-                        <span className="font-medium">{item.title}</span>
+                        <span className="font-medium">{item.name}</span>
 
                         <span className="text-gray-500 text-[12px]">
-                          {item.description}
+                          {item.discount}
                         </span>
                       </div>
                     </NavigationMenuLink>
                   ),
                 )}
 
-                <div className="mt-6 text-center ">
+                <div className="mt-6 text-center">
                   <Link
                     href="#"
                     className="text-blue-600 hover:underline text-[12px]"
                   >
                     مشاهده همه{" "}
-                    {activeHotel === "internal"
+                    {activeTour === "internal"
                       ? "تور های داخلی"
                       : "تور های خارجی"}
                   </Link>

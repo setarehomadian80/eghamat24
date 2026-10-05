@@ -5,7 +5,12 @@ import { BedDouble, Users, Coffee } from "lucide-react";
 export default function PropertyRooms() {
   return (
     <section className="mt-12">
-      <h2 className="text-[20px] font-bold mb-6 ">لیست اتاق ها</h2>
+      <h2 className="
+      text-[16px] 
+      md:text-[18px] 
+      xl:text-[20px] 
+      font-bold mb-6 
+      ">لیست اتاق ها</h2>
 
       <div className="flex flex-col gap-5">
         {rooms.map((room) => (
@@ -37,7 +42,7 @@ export default function PropertyRooms() {
                 <h3
                   className="
               font-bold
-              text-[15px]
+              text-[14px] xl:text-[18px]
               mb-4
               line-clamp-1
               "
