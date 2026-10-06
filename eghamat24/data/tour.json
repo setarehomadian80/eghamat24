@@ -716,24 +716,24 @@
     "id": 32,
     "cityId": 6,
     "name": "تور اصفهان هتل کوثر",
-    "slug": "isfahan-tour-kowsar-hotel",
-    "address": "اصفهان، کنار زاینده رود",
-    "stars": 5,
-    "price": "17.500.000 تومان",
-    "discount": "30% تخفیف",
-    "rating": "9/10",
-    "reviewCount": 768,
+    "slug": "isfahan-kosar-tour",
+    "address": "اصفهان، میدان نقش جهان",
+    "stars": 4,
+    "price": "13.600.000 تومان",
+    "discount": "25% تخفیف",
+    "rating": "8.7/10",
+    "reviewCount": 514,
     "image": "https://www.eghamat24.com/app/public/new_images/184x184/Esfahan-Abbasi-31.jpg",
-    "area": "زاینده رود",
+    "area": "میدان نقش جهان",
     "amenities": [
+      "بازدید اماکن تاریخی",
+      "راهنمای گردشگری",
       "صبحانه",
-      "استخر",
-      "ترانسفر",
-      "بیمه مسافرتی"
+      "اقامت"
     ],
-    "duration": "4 شب و 5 روز",
-    "transport": "هوایی",
-    "badge": "تخفیف ویژه"
+    "duration": "3 شب و 4 روز",
+    "transport": "زمینی",
+    "badge": "ویژه گردشگری"
   },
   {
     "id": 33,
@@ -838,7 +838,7 @@
     "discount": "35% تخفیف",
     "rating": "9.5/10",
     "reviewCount": 1240,
-    "image": "/tours/Dubai/dubai-atlantis.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/dubai-visionimperial-1.webp",
     "area": "پالم جمیرا",
     "amenities": [
       "بلیط رفت و برگشت",
@@ -861,7 +861,7 @@
     "discount": "30% تخفیف",
     "rating": "9.2/10",
     "reviewCount": 986,
-    "image": "/tours/Dubai/dubai-jumeirah.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Dubai-CitySeasonsDeira-1.webp",
     "area": "ساحل جمیرا",
     "amenities": [
       "صبحانه",
@@ -884,7 +884,7 @@
     "discount": "45% تخفیف",
     "rating": "8.4/10",
     "reviewCount": 532,
-    "image": "/tours/Dubai/dubai-economic.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/dubai-swissotelalmuroojdubai-2.webp",
     "area": "دیره دبی",
     "amenities": [
       "اقامت",
@@ -907,7 +907,7 @@
     "discount": "25% تخفیف",
     "rating": "8.8/10",
     "reviewCount": 745,
-    "image": "/tours/Dubai/dubai-city-tour.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/dubai-thepark-1.webp",
     "area": "برج خلیفه",
     "amenities": [
       "گشت شهری",
@@ -930,7 +930,7 @@
     "discount": "20% تخفیف",
     "rating": "9/10",
     "reviewCount": 618,
-    "image": "/tours/Dubai/dubai-family.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Dubai-MillenniumPlazaDowntown-1.webp",
     "area": "مارینا دبی",
     "amenities": [
       "ترانسفر",
@@ -953,7 +953,7 @@
     "discount": "50% تخفیف",
     "rating": "8.1/10",
     "reviewCount": 294,
-    "image": "/tours/Dubai/dubai-lastminute.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/dubai-tamrinn-1.webp",
     "area": "دیره",
     "amenities": [
       "رزرو سریع",
@@ -1000,7 +1000,7 @@
     "discount": "30% تخفیف",
     "rating": "8.9/10",
     "reviewCount": 864,
-    "image": "/tours/Istanbul/istanbul-taksim.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/istanbul-jaffnisantasi-1.webp",
     "area": "خیابان استقلال",
     "amenities": [
       "صبحانه",
@@ -1023,7 +1023,7 @@
     "discount": "45% تخفیف",
     "rating": "8.3/10",
     "reviewCount": 472,
-    "image": "/tours/Istanbul/istanbul-economic.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Istanbul-GrandCevahir-1.webp",
     "area": "فاتح",
     "amenities": [
       "اقامت",
@@ -1046,7 +1046,7 @@
     "discount": "25% تخفیف",
     "rating": "9/10",
     "reviewCount": 735,
-    "image": "/tours/Istanbul/istanbul-bosphorus.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Istanbul-WhiteMonarch-1.webp",
     "area": "بسفر",
     "amenities": [
       "تور کشتی بسفر",
@@ -1069,7 +1069,7 @@
     "discount": "20% تخفیف",
     "rating": "8.8/10",
     "reviewCount": 521,
-    "image": "/tours/Istanbul/istanbul-family.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/istanbul-oriella-1.webp",
     "area": "شیشلی",
     "amenities": [
       "ترانسفر",
@@ -1092,7 +1092,7 @@
     "discount": "50% تخفیف",
     "rating": "8/10",
     "reviewCount": 286,
-    "image": "/tours/Istanbul/istanbul-lastminute.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/istanbul-conceptnisantasi-1.webp",
     "area": "مرکز شهر",
     "amenities": [
       "رزرو سریع",
@@ -1116,7 +1116,7 @@
     "discount": "35% تخفیف",
     "rating": "9.6/10",
     "reviewCount": 1350,
-    "image": "/tours/Antalya/antalya-rixos.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Antalya-AsteriaKremlinPalace-1.webp",
     "area": "لارا",
     "amenities": [
       "بلیط رفت و برگشت",
@@ -1139,7 +1139,7 @@
     "discount": "25% تخفیف",
     "rating": "9.8/10",
     "reviewCount": 980,
-    "image": "/tours/Antalya/antalya-maxxroyal.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/antalya-tamarabusiness-1.webp",
     "area": "بلک",
     "amenities": [
       "اقامت لوکس",
@@ -1151,98 +1151,7 @@
     "transport": "هوایی",
     "badge": "لوکس"
   },
-  {
-    "id": 51,
-    "cityId": 9,
-    "name": "تور اقتصادی آنتالیا",
-    "slug": "economic-antalya-tour",
-    "address": "آنتالیا",
-    "stars": 4,
-    "price": "28.500.000 تومان",
-    "discount": "45% تخفیف",
-    "rating": "8.5/10",
-    "reviewCount": 643,
-    "image": "/tours/Antalya/antalya-economic.webp",
-    "area": "کنیالتی",
-    "amenities": [
-      "اقامت",
-      "صبحانه",
-      "ترانسفر",
-      "بیمه"
-    ],
-    "duration": "5 شب و 6 روز",
-    "transport": "هوایی",
-    "badge": "اقتصادی"
-  },
-  {
-    "id": 52,
-    "cityId": 9,
-    "name": "تور آنتالیا ساحلی",
-    "slug": "antalya-beach-tour",
-    "address": "آنتالیا، ساحل کنیالتی",
-    "stars": 5,
-    "price": "39.700.000 تومان",
-    "discount": "30% تخفیف",
-    "rating": "9.1/10",
-    "reviewCount": 842,
-    "image": "/tours/Antalya/antalya-beach.webp",
-    "area": "ساحل کنیالتی",
-    "amenities": [
-      "اقامت ساحلی",
-      "صبحانه",
-      "تفریحات دریایی",
-      "ترانسفر"
-    ],
-    "duration": "6 شب و 7 روز",
-    "transport": "هوایی",
-    "badge": "پیشنهاد ویژه"
-  },
-  {
-    "id": 53,
-    "cityId": 9,
-    "name": "تور خانوادگی آنتالیا",
-    "slug": "antalya-family-tour",
-    "address": "آنتالیا",
-    "stars": 5,
-    "price": "46.200.000 تومان",
-    "discount": "20% تخفیف",
-    "rating": "9/10",
-    "reviewCount": 576,
-    "image": "/tours/Antalya/antalya-family.webp",
-    "area": "بلک",
-    "amenities": [
-      "باشگاه کودکان",
-      "استخر",
-      "صبحانه",
-      "بیمه"
-    ],
-    "duration": "7 شب و 8 روز",
-    "transport": "هوایی",
-    "badge": "خانوادگی"
-  },
-  {
-    "id": 54,
-    "cityId": 9,
-    "name": "تور آنتالیا لحظه آخری",
-    "slug": "antalya-last-minute-tour",
-    "address": "آنتالیا",
-    "stars": 4,
-    "price": "24.900.000 تومان",
-    "discount": "50% تخفیف",
-    "rating": "8.2/10",
-    "reviewCount": 319,
-    "image": "/tours/Antalya/antalya-lastminute.webp",
-    "area": "مرکز شهر",
-    "amenities": [
-      "رزرو سریع",
-      "اقامت",
-      "پشتیبانی آنلاین",
-      "بیمه"
-    ],
-    "duration": "4 شب و 5 روز",
-    "transport": "هوایی",
-    "badge": "لحظه آخری"
-  },
+
 
   {
     "id": 55,
@@ -1255,7 +1164,7 @@
     "discount": "35% تخفیف",
     "rating": "9.2/10",
     "reviewCount": 856,
-    "image": "/tours/Yerevan/yerevan-marriott.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/yerevan-expocore-1.webp",
     "area": "میدان جمهوری",
     "amenities": [
       "بلیط رفت و برگشت",
@@ -1278,7 +1187,7 @@
     "discount": "30% تخفیف",
     "rating": "8.9/10",
     "reviewCount": 632,
-    "image": "/tours/Yerevan/yerevan-grand.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Yerevan-Central-1.webp",
     "area": "مرکز شهر ایروان",
     "amenities": [
       "صبحانه",
@@ -1301,7 +1210,7 @@
     "discount": "45% تخفیف",
     "rating": "8.1/10",
     "reviewCount": 354,
-    "image": "/tours/Yerevan/yerevan-economic.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Yerevan-RadissonBlu-1.webp",
     "area": "مرکز شهر",
     "amenities": [
       "اقامت",
@@ -1313,75 +1222,7 @@
     "transport": "زمینی",
     "badge": "اقتصادی"
   },
-  {
-    "id": 58,
-    "cityId": 10,
-    "name": "تور ایروان فرهنگی",
-    "slug": "yerevan-cultural-tour",
-    "address": "ایروان، ارمنستان",
-    "stars": 4,
-    "price": "18.700.000 تومان",
-    "discount": "25% تخفیف",
-    "rating": "8.7/10",
-    "reviewCount": 489,
-    "image": "/tours/Yerevan/yerevan-cultural.webp",
-    "area": "مراکز تاریخی ایروان",
-    "amenities": [
-      "بازدید جاذبه‌ها",
-      "راهنمای تور",
-      "صبحانه",
-      "اقامت"
-    ],
-    "duration": "4 شب و 5 روز",
-    "transport": "هوایی",
-    "badge": "ویژه گردشگری"
-  },
-  {
-    "id": 59,
-    "cityId": 10,
-    "name": "تور خانوادگی ایروان",
-    "slug": "yerevan-family-tour",
-    "address": "ایروان",
-    "stars": 4,
-    "price": "21.300.000 تومان",
-    "discount": "20% تخفیف",
-    "rating": "8.8/10",
-    "reviewCount": 421,
-    "image": "/tours/Yerevan/yerevan-family.webp",
-    "area": "مرکز شهر",
-    "amenities": [
-      "اقامت خانوادگی",
-      "صبحانه",
-      "ترانسفر",
-      "بیمه"
-    ],
-    "duration": "5 شب و 6 روز",
-    "transport": "هوایی",
-    "badge": "خانوادگی"
-  },
-  {
-    "id": 60,
-    "cityId": 10,
-    "name": "تور ایروان لحظه آخری",
-    "slug": "yerevan-last-minute-tour",
-    "address": "ایروان",
-    "stars": 3,
-    "price": "13.500.000 تومان",
-    "discount": "50% تخفیف",
-    "rating": "7.9/10",
-    "reviewCount": 245,
-    "image": "/tours/Yerevan/yerevan-lastminute.webp",
-    "area": "مرکز شهر",
-    "amenities": [
-      "رزرو سریع",
-      "اقامت",
-      "پشتیبانی آنلاین",
-      "بیمه"
-    ],
-    "duration": "3 شب و 4 روز",
-    "transport": "زمینی",
-    "badge": "لحظه آخری"
-  },
+
 
   {
     "id": 61,
@@ -1394,7 +1235,7 @@
     "discount": "35% تخفیف",
     "rating": "9.3/10",
     "reviewCount": 945,
-    "image": "/tours/Tbilisi/tbilisi-radisson.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/tbilisi-marjanplaza-1.webp",
     "area": "مرکز شهر تفلیس",
     "amenities": [
       "بلیط رفت و برگشت",
@@ -1417,7 +1258,7 @@
     "discount": "30% تخفیف",
     "rating": "9.1/10",
     "reviewCount": 732,
-    "image": "/tours/Tbilisi/tbilisi-marriott.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/tbilisi-laerton-1.webp",
     "area": "روستاولی",
     "amenities": [
       "صبحانه",
@@ -1440,7 +1281,7 @@
     "discount": "45% تخفیف",
     "rating": "8.2/10",
     "reviewCount": 398,
-    "image": "/tours/Tbilisi/tbilisi-economic.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/tbilisi-ibistbilisicity-1.webp",
     "area": "مرکز شهر",
     "amenities": [
       "اقامت",
@@ -1463,7 +1304,7 @@
     "discount": "25% تخفیف",
     "rating": "8.8/10",
     "reviewCount": 615,
-    "image": "/tours/Tbilisi/tbilisi-batumi.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Tbilisi-Denis-1.webp",
     "area": "تفلیس و باتومی",
     "amenities": [
       "بازدید دو شهر",
@@ -1486,7 +1327,7 @@
     "discount": "20% تخفیف",
     "rating": "8.7/10",
     "reviewCount": 486,
-    "image": "/tours/Tbilisi/tbilisi-family.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/tbilisi-novoteltbilisicenter-1.webp",
     "area": "منطقه آولاباری",
     "amenities": [
       "اقامت خانوادگی",
@@ -1509,7 +1350,7 @@
     "discount": "50% تخفیف",
     "rating": "8/10",
     "reviewCount": 274,
-    "image": "/tours/Tbilisi/tbilisi-lastminute.webp",
+    "image": "https://www.eghamat24.com/app/public/new_images/282x176/Tbilisi-TheBiltmore-1.webp",
     "area": "مرکز شهر",
     "amenities": [
       "رزرو سریع",

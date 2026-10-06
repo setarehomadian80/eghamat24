@@ -7,7 +7,6 @@ import {
   LucideIcon,
   PlaneTakeoff,
 } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import HotelSearchForm from "../button/HotelSearchForm";
 import ResidencySearchForm from "./ResidencySearchForm";

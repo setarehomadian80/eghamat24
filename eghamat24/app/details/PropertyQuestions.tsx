@@ -4,21 +4,15 @@ import { useState } from "react";
 import questions from "@/data/questions.json";
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
-import tours from "@/data/tour.json";
 import { MessageCircleQuestion, ThumbsUp, ThumbsDown } from "lucide-react";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 export default function PropertyQuestions({ slug, type }: Props) {
-  const properties =
-    type === "hotel"
-      ? hotels
-      : type === "accommodation"
-        ? accommodation
-        : tours;
+  const properties = type === "hotel" ? hotels : accommodation;
 
   const property = properties.find((item) => item.slug === slug);
 

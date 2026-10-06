@@ -5,7 +5,7 @@ import { useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
 
 type Props = {
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
   areas: string[];
 
   selectedStars: number[];
@@ -120,11 +120,7 @@ export default function PropertyFilterSidebar({
           <ArrowRight size={18} />
         </button>
 
-        {type === "hotel"
-          ? "فیلتر های هتل"
-          : type === "accommodation"
-            ? "فیلتر های اقامتگاه"
-            : "فیلتر های تور"}
+        {type === "hotel" ? "فیلتر های هتل" : "فیلتر های اقامتگاه"}
       </h1>
 
       {/* باکس فیلتر ها به صورت جدا برای اسکرول */}
@@ -262,6 +258,7 @@ export default function PropertyFilterSidebar({
             </div>
           )}
         </div>
+
         {/* ستاره هتل */}
 
         <div className="border-b border-[#ECECEC]">
@@ -330,6 +327,7 @@ export default function PropertyFilterSidebar({
             </div>
           )}
         </div>
+
         {/* تعداد تخت */}
 
         <div className="border-b border-[#ECECEC]">
@@ -561,6 +559,7 @@ export default function PropertyFilterSidebar({
             </div>
           )}
         </div>
+
         {/* محدوده */}
 
         <div className="border-b border-[#ECECEC]">
@@ -774,6 +773,7 @@ export default function PropertyFilterSidebar({
           )}
         </div>
       </div>
+
       {/* تعداد هتل */}
       <div
         className="

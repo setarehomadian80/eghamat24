@@ -3,14 +3,12 @@
 import { useState } from "react";
 import citiesAccommodation from "@/data/citiesAccommodation.json";
 import citiesHotel from "@/data/citiesHotel.json";
-import citiesTour from "@/data/citiestour.json";
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
-import tours from "@/data/tour.json";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 const Locations = [
@@ -43,18 +41,14 @@ export default function PropertyDistance({ slug, type }: Props) {
   const property =
     type === "hotel"
       ? hotels.find((item) => item.slug === slug)
-      : type === "accommodation"
-        ? accommodation.find((item) => item.slug === slug)
-        : tours.find((item) => item.slug === slug);
+      : accommodation.find((item) => item.slug === slug);
 
   if (!property) return null;
 
   const city =
     type === "hotel"
       ? citiesHotel.find((item) => item.cityId === property.cityId)
-      : type === "accommodation"
-        ? citiesAccommodation.find((item) => item.cityId === property.cityId)
-        : citiesTour.find((item) => item.cityId === property.cityId);
+      : citiesAccommodation.find((item) => item.cityId === property.cityId);
 
   if (!city) return null;
 

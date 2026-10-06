@@ -7,13 +7,9 @@ type Props = {
     rating?: string;
     name: string;
     address?: string;
-
-    // tour
-    duration?: string;
-    transport?: string;
   };
 
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 export default function PropertyBoxes({ property }: Props) {

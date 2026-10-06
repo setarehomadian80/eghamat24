@@ -2,7 +2,6 @@
 
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
-import tours from "@/data/tour.json";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -12,16 +11,11 @@ import Link from "next/link";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 export default function PropertySimilarHotels({ slug, type }: Props) {
-  const properties =
-    type === "hotel"
-      ? hotels
-      : type === "accommodation"
-        ? accommodation
-        : tours;
+  const properties = type === "hotel" ? hotels : accommodation;
 
   const property = properties.find((item) => item.slug === slug);
 
@@ -36,12 +30,9 @@ export default function PropertySimilarHotels({ slug, type }: Props) {
         Number(item.price) - Number(property.price),
       );
 
-      const starDifference =
-        type === "tour"
-          ? 0
-          : Math.abs(
-              Number(item.stars ?? 0) - Number(property.stars ?? 0),
-            );
+      const starDifference = Math.abs(
+        Number(item.stars ?? 0) - Number(property.stars ?? 0),
+      );
 
       return {
         ...item,
@@ -66,9 +57,7 @@ export default function PropertySimilarHotels({ slug, type }: Props) {
       >
         {type === "hotel"
           ? `هتل‌های مشابه ${property.name}`
-          : type === "accommodation"
-            ? `اقامتگاه‌های مشابه ${property.name}`
-            : `تورهای مشابه ${property.name}`}
+          : `اقامتگاه‌های مشابه ${property.name}`}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
@@ -90,32 +79,26 @@ export default function PropertySimilarHotels({ slug, type }: Props) {
               />
 
               <CardContent>
-                {/* فقط هتل و اقامتگاه */}
-                {type !== "tour" &&
-                  "stars" in place &&
-                  "reviewCount" in place &&
-                  "rating" in place && (
-                    <div className="flex items-center justify-between">
-                      <div className="text-[#f6b100]">
-                        {"★".repeat(place.stars ?? 0)}
-                      </div>
+                <div className="flex items-center justify-between">
+                  <div className="text-[#f6b100]">
+                    {"★".repeat(place.stars ?? 0)}
+                  </div>
 
-                      <div className="flex items-center gap-1">
-                        <span className="text-xs text-gray-500">
-                          {place.reviewCount ?? 0}
-                        </span>
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs text-gray-500">
+                      {place.reviewCount ?? 0}
+                    </span>
 
-                        <span className="flex items-center text-xs font-bold">
-                          {place.rating}
+                    <span className="flex items-center text-xs font-bold">
+                      {place.rating}
 
-                          <Laugh
-                            size={16}
-                            className="mr-1 text-green-500"
-                          />
-                        </span>
-                      </div>
-                    </div>
-                  )}
+                      <Laugh
+                        size={16}
+                        className="mr-1 text-green-500"
+                      />
+                    </span>
+                  </div>
+                </div>
 
                 <Typography
                   className="line-clamp-1"
@@ -138,13 +121,7 @@ export default function PropertySimilarHotels({ slug, type }: Props) {
                     fontFamily: "var(--font-iransans)",
                   }}
                 >
-                  {type === "tour"
-                    ? "duration" in place && "transport" in place
-                      ? `${place.duration ?? ""} - ${place.transport ?? ""}`
-                      : ""
-                    : "address" in place
-                      ? place.address
-                      : ""}
+                  {place.address}
                 </Typography>
 
                 <Typography

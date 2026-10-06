@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Phone, ReceiptText, Search, User } from "lucide-react";
 import { SheetDemo } from "@/components/MobileMenu/hamburgerMenu";
 import { NavigationMenuDemo } from "./navigationMenuDemo";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -16,7 +17,9 @@ export default function Header() {
           <div className="md:hidden flex">
             <SheetDemo />
           </div>
-          <Image src="/logo.svg" width={100} height={50} alt="logo" />
+          <Link href="/">
+            <Image src="/logo.svg" width={100} height={50} alt="logo" />
+          </Link>
         </div>
         {/* mobile view */}
         <div className="gap-5 md:hidden">
@@ -42,14 +45,14 @@ export default function Header() {
           {/* left */}
           <div className="flex gap-6 *:cursor-pointer">
             <span className="text-gray-500">
-              <Search size={20}/>
+              <Search size={20} />
             </span>
-            <span className="text-[#fb4d53]" >
-              <Phone size={20}/>
+            <span className="text-[#fb4d53]">
+              <Phone size={20} />
             </span>
             <span className="text-[14px]">پیگیری رزرو</span>
-            <span className="text-[#fb4d53] " >
-              <User size={20}/>
+            <span className="text-[#fb4d53] ">
+              <User size={20} />
             </span>
           </div>
         </div>

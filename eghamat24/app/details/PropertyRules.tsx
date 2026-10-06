@@ -1,6 +1,5 @@
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
-import tours from "@/data/tour.json";
 
 import {
   DoorOpen,
@@ -20,7 +19,7 @@ type RulesItem = {
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 const PropertyRulesItem: RulesItem[] = [
@@ -56,9 +55,7 @@ export default function PropertyRules({ slug, type }: Props) {
   const property =
     type === "hotel"
       ? hotels.find((item) => item.slug === slug)
-      : type === "accommodation"
-        ? accommodation.find((item) => item.slug === slug)
-        : tours.find((item) => item.slug === slug);
+      : accommodation.find((item) => item.slug === slug);
 
   if (!property) return null;
 

@@ -7,23 +7,17 @@ import Link from "next/link";
 import type { Property } from "./CityPropertiesPage";
 
 type Props = {
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 
   property: Property;
 };
 
 export default function PropertyCard({ property, type }: Props) {
   return (
-    <Link
-      href={
-        type === "tour"
-          ? `/details/tour/${property.slug}`
-          : `/details/${type}/${property.slug}`
-      }
-    >
+    <Link href={`/details/${type}/${property.slug}`}>
       <Card className="rounded-xl! shadow-none! cursor-pointer">
         <CardMedia
-        component="img"
+          component="img"
           image={property.image}
           title={property.name}
           sx={{
@@ -33,27 +27,23 @@ export default function PropertyCard({ property, type }: Props) {
         />
 
         <CardContent>
-          {/* فقط هتل و اقامتگاه */}
-
-          {type !== "tour" && (
-            <div className="flex items-center justify-between">
-              <div className="text-[#f6b100]">
-                {"★".repeat(property.stars ?? 0)}
-              </div>
-
-              <div className="flex items-center gap-1">
-                <span className="text-xs text-gray-500">
-                  {property.reviewCount ?? 0}
-                </span>
-
-                <span className="flex items-center text-xs font-bold">
-                  {property.rating}
-
-                  <Laugh size={16} className="mr-1 text-green-500" />
-                </span>
-              </div>
+          <div className="flex items-center justify-between">
+            <div className="text-[#f6b100]">
+              {"★".repeat(property.stars ?? 0)}
             </div>
-          )}
+
+            <div className="flex items-center gap-1">
+              <span className="text-xs text-gray-500">
+                {property.reviewCount ?? 0}
+              </span>
+
+              <span className="flex items-center text-xs font-bold">
+                {property.rating}
+
+                <Laugh size={16} className="mr-1 text-green-500" />
+              </span>
+            </div>
+          </div>
 
           <Typography
             className="line-clamp-1"
@@ -82,9 +72,7 @@ export default function PropertyCard({ property, type }: Props) {
               fontFamily: "var(--font-iransans)",
             }}
           >
-            {type === "tour"
-              ? `${property.duration ?? ""} - ${property.transport ?? ""}`
-              : property.address}
+            {property.address}
           </Typography>
 
           <Typography

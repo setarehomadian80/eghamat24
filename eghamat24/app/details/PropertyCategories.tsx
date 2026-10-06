@@ -1,31 +1,18 @@
 import hotels from "@/data/hotels.json";
 import accommodation from "@/data/accommodation.json";
-import tours from "@/data/tour.json";
 import citiesHotel from "@/data/citiesHotel.json";
 import citiesAccommodation from "@/data/citiesAccommodation.json";
-import citiesTour from "@/data/citiestour.json";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 export default function PropertyCategories({ slug, type }: Props) {
-  const properties =
-    type === "hotel"
-      ? hotels
-      : type === "accommodation"
-        ? accommodation
-        : tours;
-
-  const cities =
-    type === "hotel"
-      ? citiesHotel
-      : type === "accommodation"
-        ? citiesAccommodation
-        : citiesTour;
+  const properties = type === "hotel" ? hotels : accommodation;
+  const cities = type === "hotel" ? citiesHotel : citiesAccommodation;
 
   const property = properties.find((item) => item.slug === slug);
 
@@ -51,38 +38,23 @@ export default function PropertyCategories({ slug, type }: Props) {
           `هتل آپارتمان های ${cityName}`,
           `هتل های نزدیک جاذبه های ${cityName}`,
         ]
-      : type === "accommodation"
-        ? [
-            `اقامتگاه های سنتی ${cityName}`,
-            `اقامتگاه های بوم گردی ${cityName}`,
-            `ویلاهای ${cityName}`,
-            `سوئیت های ${cityName}`,
-            `آپارتمان های مبله ${cityName}`,
-            `اقامتگاه های ارزان ${cityName}`,
-            `اقامتگاه های لوکس ${cityName}`,
-            `اقامتگاه های مناسب خانواده ${cityName}`,
-            `اقامتگاه های نزدیک مرکز شهر ${cityName}`,
-            `اقامتگاه های نزدیک جاذبه های ${cityName}`,
-          ]
-        : [
-            `تورهای داخلی ${cityName}`,
-            `تورهای خارجی ${cityName}`,
-            `تورهای ارزان ${cityName}`,
-            `تورهای لوکس ${cityName}`,
-            `تورهای خانوادگی ${cityName}`,
-            `تورهای یک روزه ${cityName}`,
-            `تورهای چند روزه ${cityName}`,
-            `تورهای مناسب طبیعت گردی ${cityName}`,
-            `تورهای نزدیک ${cityName}`,
-            `تورهای پرطرفدار ${cityName}`,
-          ];
+      : [
+          `اقامتگاه های سنتی ${cityName}`,
+          `اقامتگاه های بوم گردی ${cityName}`,
+          `ویلاهای ${cityName}`,
+          `سوئیت های ${cityName}`,
+          `آپارتمان های مبله ${cityName}`,
+          `اقامتگاه های ارزان ${cityName}`,
+          `اقامتگاه های لوکس ${cityName}`,
+          `اقامتگاه های مناسب خانواده ${cityName}`,
+          `اقامتگاه های نزدیک مرکز شهر ${cityName}`,
+          `اقامتگاه های نزدیک جاذبه های ${cityName}`,
+        ];
 
   const suggestions =
     type === "hotel"
       ? [`بلیط هواپیما ${cityName}`]
-      : type === "accommodation"
-        ? [`راهنمای سفر ${cityName}`]
-        : [`هتل های ${cityName}`];
+      : [`راهنمای سفر ${cityName}`];
 
   return (
     <section className="mt-16">
@@ -94,9 +66,7 @@ export default function PropertyCategories({ slug, type }: Props) {
       >
         {type === "hotel"
           ? `دسته‌بندی هتل های ${cityName}`
-          : type === "accommodation"
-            ? `دسته‌بندی اقامتگاه های ${cityName}`
-            : `دسته‌بندی تورهای ${cityName}`}
+          : `دسته‌بندی اقامتگاه های ${cityName}`}
       </h2>
 
       <div className="flex flex-wrap gap-3">

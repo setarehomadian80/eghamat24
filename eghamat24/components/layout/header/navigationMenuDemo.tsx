@@ -78,6 +78,7 @@ const Flight: { title: string; href: string }[] = [
     href: "/KishFlights.html",
   },
 ];
+
 const foreignFlight: { title: string; href: string }[] = [
   {
     title: "بلیط هواپیما استانبول",
@@ -96,6 +97,7 @@ const foreignFlight: { title: string; href: string }[] = [
     href: "/MuscatFlights.html",
   },
 ];
+
 const Ticket: { title: string; href: string; description: string }[] = [
   {
     title: "تفریحات دبی",
@@ -115,13 +117,13 @@ const Ticket: { title: string; href: string; description: string }[] = [
 ];
 
 export function NavigationMenuDemo() {
-  const [activeHotel, setActiveHotel] = React.useState<"internal" | "external">(
-    "internal",
-  );
+  const [activeHotel, setActiveHotel] = React.useState<
+    "internal" | "external"
+  >("internal");
 
-  const [activeTour, setActiveTour] = React.useState<"internal" | "external">(
-    "internal",
-  );
+  const [activeTour, setActiveTour] = React.useState<
+    "internal" | "external"
+  >("internal");
 
   const [activeFlight, setActiveFlight] = React.useState<
     "internal" | "external"
@@ -140,7 +142,7 @@ export function NavigationMenuDemo() {
               <div className="w-30 py-5 border-l *:text-[12px]!">
                 <div
                   onMouseEnter={() => setActiveHotel("internal")}
-                  className={`cursor-pointer p-2  transition
+                  className={`cursor-pointer p-2 transition
             ${
               activeHotel === "internal"
                 ? "bg-gray-100 text-red-500"
@@ -164,28 +166,28 @@ export function NavigationMenuDemo() {
               </div>
 
               {/* ستون لیست */}
-              <div className="flex-1 p-6 w-87.5 ">
-                {(activeHotel === "internal" ? iranCities : foreignCities).map(
-                  (item) => (
-                    <NavigationMenuLink
-                      key={item.id}
-                      render={<Link href={`/hotel/${item.slug}`} />}
-                      className="block cursor-pointer
+              <div className="flex-1 p-6 w-87.5">
+                {(activeHotel === "internal"
+                  ? iranCities
+                  : foreignCities
+                ).map((item) => (
+                  <NavigationMenuLink
+                    key={item.id}
+                    render={<Link href={`/hotel/${item.slug}`} />}
+                    className="block cursor-pointer
              rounded-lg p-3 hover:bg-gray-100 text-[12px]"
-                    >
-                      {" "}
-                      <div className="flex justify-between">
-                        <span className="font-medium">{item.name}</span>
+                  >
+                    <div className="flex justify-between">
+                      <span className="font-medium">{item.name}</span>
 
-                        <span className="text-gray-500 text-[12px]">
-                          {item.discount}
-                        </span>
-                      </div>
-                    </NavigationMenuLink>
-                  ),
-                )}
+                      <span className="text-gray-500 text-[12px]">
+                        {item.discount}
+                      </span>
+                    </div>
+                  </NavigationMenuLink>
+                ))}
 
-                <div className="mt-6 text-center ">
+                <div className="mt-6 text-center">
                   <Link
                     href="#"
                     className="text-blue-600 hover:underline text-[12px]"
@@ -204,6 +206,7 @@ export function NavigationMenuDemo() {
         {/* 2 */}
         <NavigationMenuItem className="cursor-pointer">
           <NavigationMenuTrigger>رزرو اقامتگاه</NavigationMenuTrigger>
+
           <NavigationMenuContent className="w-75">
             <div className="w-full p-3">
               {Accommodation_menu.map((item) => (
@@ -218,7 +221,8 @@ export function NavigationMenuDemo() {
                   </div>
                 </NavigationMenuLink>
               ))}
-              <div className="mt-6 text-center ">
+
+              <div className="mt-6 text-center">
                 <Link
                   href="#"
                   className="text-blue-600 hover:underline text-[12px]"
@@ -269,7 +273,12 @@ export function NavigationMenuDemo() {
                   (item) => (
                     <NavigationMenuLink
                       key={item.id}
-                      render={<Link href={item.href} />}
+                      render={
+                        <Link
+                          href="#"
+                          onClick={(e) => e.preventDefault()}
+                        />
+                      }
                       className="
               block cursor-pointer
               rounded-lg p-3
@@ -307,15 +316,16 @@ export function NavigationMenuDemo() {
         {/* 4 */}
         <NavigationMenuItem className="hidden lg:block cursor-pointer">
           <NavigationMenuTrigger>رزرو پرواز</NavigationMenuTrigger>
+
           <NavigationMenuContent>
             <div className="flex w-125 bg-white rounded-2xl">
               {/* ستون سمت راست */}
               <div className="w-30 py-5 border-l *:text-[12px]!">
                 <div
                   onMouseEnter={() => setActiveFlight("internal")}
-                  className={`cursor-pointer p-2  transition
+                  className={`cursor-pointer p-2 transition
             ${
-              activeTour === "internal"
+              activeFlight === "internal"
                 ? "bg-gray-100 text-red-500"
                 : "hover:bg-gray-50"
             }`}
@@ -327,7 +337,7 @@ export function NavigationMenuDemo() {
                   onMouseEnter={() => setActiveFlight("external")}
                   className={`cursor-pointer p-2 font-medium transition
             ${
-              activeTour === "external"
+              activeFlight === "external"
                 ? "bg-gray-100 text-red-500"
                 : "hover:bg-gray-50"
             }`}
@@ -337,7 +347,7 @@ export function NavigationMenuDemo() {
               </div>
 
               {/* ستون لیست */}
-              <div className="flex-1 p-6 w-87.5 ">
+              <div className="flex-1 p-6 w-87.5">
                 {(activeFlight === "internal" ? Flight : foreignFlight).map(
                   (item) => (
                     <NavigationMenuLink
@@ -351,7 +361,7 @@ export function NavigationMenuDemo() {
                   ),
                 )}
 
-                <div className="mt-6 text-center ">
+                <div className="mt-6 text-center">
                   <Link
                     href="#"
                     className="text-blue-600 hover:underline text-[12px]"
@@ -370,6 +380,7 @@ export function NavigationMenuDemo() {
         {/* 5 */}
         <NavigationMenuItem className="hidden lg:block cursor-pointer">
           <NavigationMenuTrigger>بلیط تفریحات</NavigationMenuTrigger>
+
           <NavigationMenuContent className="w-75">
             <div className="w-full p-3">
               {Ticket.map((item) => (
@@ -383,7 +394,8 @@ export function NavigationMenuDemo() {
                   </div>
                 </NavigationMenuLink>
               ))}
-              <div className="mt-6 text-center ">
+
+              <div className="mt-6 text-center">
                 <Link
                   href="#"
                   className="text-blue-600 hover:underline text-[12px]"
@@ -394,11 +406,13 @@ export function NavigationMenuDemo() {
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         {/* 6 */}
         <NavigationMenuItem className="hidden xl:block cursor-pointer">
           <NavigationMenuTrigger>بیشتر</NavigationMenuTrigger>
+
           <NavigationMenuContent>
-            <ul className="grid  **:my-2 w-[200px]">
+            <ul className="grid **:my-2 w-[200px]">
               <li>
                 <NavigationMenuLink
                   render={
@@ -407,6 +421,7 @@ export function NavigationMenuDemo() {
                     </Link>
                   }
                 />
+
                 <NavigationMenuLink
                   render={
                     <Link href="#" className="flex-row items-center gap-2">
@@ -414,6 +429,7 @@ export function NavigationMenuDemo() {
                     </Link>
                   }
                 />
+
                 <NavigationMenuLink
                   render={
                     <Link href="#" className="flex-row items-center gap-2">
@@ -421,6 +437,7 @@ export function NavigationMenuDemo() {
                     </Link>
                   }
                 />
+
                 <NavigationMenuLink
                   render={
                     <Link href="#" className="flex-row items-center gap-2">
@@ -428,6 +445,7 @@ export function NavigationMenuDemo() {
                     </Link>
                   }
                 />
+
                 <NavigationMenuLink
                   render={
                     <Link href="#" className="flex-row items-center gap-2">
@@ -457,6 +475,7 @@ function ListItem({
           <Link href={href}>
             <div className="flex flex-col gap-1 text-sm">
               <div className="leading-none font-medium">{title}</div>
+
               <div className="line-clamp-2 text-muted-foreground">
                 {children}
               </div>

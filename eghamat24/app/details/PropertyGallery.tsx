@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
-import tours from "@/data/tour.json";
 import hotels from "@/data/hotels.json";
 import detailHotels from "@/data/detailHotel.json";
 import detailAccommodation from "@/data/detailAccommodation.json";
@@ -17,52 +16,42 @@ import "swiper/css/pagination";
 
 type Props = {
   slug: string;
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 export default function HotelGallery({ slug, type }: Props) {
   const hotel = hotels.find((item) => item.slug === slug);
 
-  const tour = tours.find((item) => item.slug === slug);
-
   const detail =
     type === "hotel"
       ? detailHotels.find((item) => item.slug === slug)
-      : type === "accommodation"
-        ? detailAccommodation.find((item) => item.slug === slug)
-        : null;
+      : detailAccommodation.find((item) => item.slug === slug);
 
   const [showGallery, setShowGallery] = useState(false);
 
-  if (!detail && type !== "tour") return null;
+  if (!detail) return null;
 
   const mainImage =
     type === "hotel"
       ? hotel?.image
-      : type === "accommodation"
-        ? detail?.gallery[0]
-        : tour?.image;
+      : detail?.gallery[0];
 
   if (!mainImage) return null;
 
   const images = [
     mainImage,
-    ...(type === "tour"
-      ? []
-      : detail?.gallery.filter((img) => img !== mainImage) ?? []),
+    ...(detail?.gallery.filter((img) => img !== mainImage) ?? []),
   ];
 
   const propertyName =
     type === "hotel"
       ? hotel?.name || ""
-      : type === "accommodation"
-        ? detail?.title || ""
-        : tour?.name || "";
+      : detail?.title || "";
 
   const [activeImage, setActiveImage] = useState(images[0]);
 
   // نمایش گالری کامل
-  if (showGallery && type !== "tour") {
+  if (showGallery) {
     return (
       <GalleryList
         slug={slug}

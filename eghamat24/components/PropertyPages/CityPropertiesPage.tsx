@@ -11,6 +11,7 @@ import {
 
 import PropertyFilterSidebar from "./PropertyFilterSidebar";
 import PropertyCard from "./PropertyCard";
+import SearchBoxPages from "./searchBoxPages";
 
 type CityData = {
   id: number;
@@ -25,6 +26,7 @@ type CityData = {
     lng: number;
   };
 };
+
 export interface Property {
   id: number;
 
@@ -50,16 +52,12 @@ export interface Property {
   beds?: number;
   mealPlan?: string;
   badge?: string;
-
-  // tour
-  duration?: string;
-  transport?: string;
 }
 
 type Props = {
   city: CityData;
   properties: Property[];
-  type: "hotel" | "accommodation" | "tour";
+  type: "hotel" | "accommodation";
 };
 
 export default function CityPropertiesPage({ city, properties, type }: Props) {
@@ -103,10 +101,12 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
         .filter((area): area is string => Boolean(area)),
     ),
   );
+
   // search
   const searchFilteredProperties = properties.filter((property) =>
     property.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+
   // stars
   const starFilteredHotels = searchFilteredProperties.filter((property) => {
     if (selectedStars.length === 0) {
@@ -115,6 +115,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
 
     return selectedStars.includes(property.stars ?? 0);
   });
+
   // Rating
   const ratingFilteredHotels = starFilteredHotels.filter((property) => {
     const rating = getRate(property.rating);
@@ -137,6 +138,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
 
     return true;
   });
+
   // Bed
   const BedFilteredHotels = ratingFilteredHotels.filter((property) => {
     if (selectedBeds.length === 0) {
@@ -145,6 +147,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
 
     return selectedBeds.includes(property.beds ?? 0);
   });
+
   // food
   const mealPlanFilteredHotels = BedFilteredHotels.filter((property) => {
     if (selectedFood.length === 0) {
@@ -153,13 +156,16 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
 
     return selectedFood.includes(property.mealPlan ?? "");
   });
+
   // area
   const areaFilteredHotels = mealPlanFilteredHotels.filter((property) => {
     if (selectedAreas.length === 0) {
       return true;
     }
+
     return selectedAreas.includes(property.area ?? "");
   });
+
   // amenities
   const amenitiesFilteredHotels = areaFilteredHotels.filter((property) => {
     if (selectedAmenities.length === 0) {
@@ -170,12 +176,14 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       property.amenities?.includes(amenity),
     );
   });
+
   // price
   const priceFilteredHotels = amenitiesFilteredHotels.filter((property) => {
     const price = getPrice(property.price);
 
     return price >= priceRange[0] && price <= priceRange[1];
   });
+
   // Bade
   const badgeFilteredHotels = priceFilteredHotels.filter((property) => {
     if (selectedBadges.length === 0) {
@@ -200,6 +208,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
         return 0;
     }
   });
+
   // Mobile Nav
 
   const [activeSheet, setActiveSheet] = useState<
@@ -208,12 +217,15 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
 
   return (
     <main>
+      {/*  */}
+      <SearchBoxPages />
+      {/*  */}
       <div
-        className="container mx-auto 
+        className="container mx-auto mt-8
        px-5 lg:flex gap-5 h-32"
       >
         {/* map */}
-        <div className="w-75  hidden lg:block">
+        <div className="w-75 hidden lg:block">
           <iframe
             src={`https://maps.google.com/maps?q=${city.location.lat},${city.location.lng}&z=13&output=embed`}
             width="100%"
@@ -223,17 +235,14 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
             title={city.name}
           />
         </div>
+
         {/* text */}
         <div className="flex-1 flex flex-col justify-evenly gap-4">
           <p>
-            لیست{" "}
-            {type === "hotel"
-              ? "هتل‌های"
-              : type === "accommodation"
-                ? "اقامتگاه‌های"
-                : "تورهای"}{" "}
+            لیست {type === "hotel" ? "هتل‌های" : "اقامتگاه‌های"}{" "}
             <span>{city.name}</span>
           </p>
+
           <div
             className="flex justify-between
           text-[12px] bg-[#eaf5fe] p-3 rounded-lg"
@@ -243,6 +252,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
               <span className="text-[#2E8ADA] mr-1">{onlineDate}</span> نمایش
               داده شده اند
             </p>
+
             <p
               className="flex items-center
              gap-2 text-[#2E8ADA] cursor-pointer"
@@ -254,7 +264,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       </div>
 
       <section className="container mx-auto lg:py-8 px-5 lg:flex gap-5 relative">
-        {/* فیلتر و مرتب سازی  و نقشه در موبایل */}
+        {/* فیلتر و مرتب سازی و نقشه در موبایل */}
         <div
           className="flex justify-around items-center
          md:hidden *:flex *:items-center *:gap-1 mb-5 text-[14px]
@@ -265,17 +275,19 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
             <SlidersHorizontal size={20} />
             فیلتر ها
           </button>
+
           <button onClick={() => setActiveSheet("sort")}>
             <ListSortDescending size={20} />
             مرتب سازی
           </button>
+
           <button onClick={() => setActiveSheet("map")}>
             <Map size={20} />
             نقشه
           </button>
         </div>
 
-        {/* باکس فیلتر در سمت راست صفحه  */}
+        {/* باکس فیلتر در سمت راست صفحه */}
         <div className="hidden lg:block lg:sticky right-0 top-0 self-start">
           <PropertyFilterSidebar
             type={type}
@@ -300,6 +312,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
             setSelectedBadges={setSelectedBadges}
           />
         </div>
+
         {/* left */}
         <div className="flex-1">
           {/* مرتب سازی */}
@@ -358,6 +371,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
           </div>
         </div>
       </section>
+
       {/* ////////////////////////////////////////////////////////////////// */}
       <div
         onClick={() => setActiveSheet(null)}
@@ -409,6 +423,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
           <span className="font-bold">مرتب سازی</span>
           <button onClick={() => setActiveSheet(null)}>✕</button>
         </div>
+
         <div className="flex flex-col p-4 gap-5">
           {[
             { id: "default", label: "پیش فرض" },
@@ -433,6 +448,7 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
           ))}
         </div>
       </div>
+
       {/* پنل نقشه (موبایل) */}
       <div
         className={`fixed top-0 bottom-0 right-0 left-0 bg-white z-50 md:hidden
@@ -443,16 +459,14 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
           <button onClick={() => setActiveSheet(null)} aria-label="بستن نقشه">
             <ArrowRight size={20} />
           </button>
+
           <span className="font-bold">
-            نقشه{" "}
-            {type === "hotel"
-              ? "هتل‌ها"
-              : type === "accommodation"
-                ? "اقامتگاه‌ها"
-                : "تورها"}
+            نقشه {type === "hotel" ? "هتل‌ها" : "اقامتگاه‌ها"}
           </span>
+
           <span className="w-5" />
         </div>
+
         <div className="h-[calc(100%-64px)]">
           <iframe
             src={`https://maps.google.com/maps?q=${city.location.lat},${city.location.lng}&z=13&output=embed`}
