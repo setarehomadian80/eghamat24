@@ -6,11 +6,14 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <main className="w-full  xl:container mx-auto ">
+    <main className="w-full xl:container mx-auto">
       {/* banner */}
       <div
         className="flex *:flex *:items-center!
-       justify-between md:justify-start items-center py-5 px-5 xl:px-0"
+        justify-between md:justify-start
+        items-center 
+        py-5 px-5 lg:px-14 
+        "
       >
         {/* logo */}
         <div className="gap-2">

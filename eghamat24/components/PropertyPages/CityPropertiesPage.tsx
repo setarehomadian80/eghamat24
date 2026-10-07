@@ -218,11 +218,14 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
   return (
     <main>
       {/*  */}
+      <div className="xl:container mx-auto mt-8
+       px-5">
       <SearchBoxPages />
+      </div>
       {/*  */}
       <div
-        className="container mx-auto mt-8
-       px-5 lg:flex gap-5 h-32"
+        className="xl:container mx-auto mt-8
+       px-5  lg:flex gap-5 h-32"
       >
         {/* map */}
         <div className="w-75 hidden lg:block">
@@ -375,7 +378,8 @@ export default function CityPropertiesPage({ city, properties, type }: Props) {
       {/* ////////////////////////////////////////////////////////////////// */}
       <div
         onClick={() => setActiveSheet(null)}
-        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 bg-black/50 z-40
+           transition-opacity duration-300 md:hidden ${
           activeSheet ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />

@@ -13,7 +13,8 @@ export default function SearchBoxPages() {
     w-full 
     rounded-[12px] 
     overflow-hidden 
-    mt-[80px]
+    mt-[40px]
+    
     ">
       {/* title button box*/}
     <HotelSearchFormPages />

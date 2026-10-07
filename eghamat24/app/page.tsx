@@ -16,7 +16,7 @@ import HotelInformation from "@/components/HotelInformation";
 export default function Home() {
   return (
     <main className="w-full 2xl:container mx-auto">
-      <div className="w-full py-5 px-5 lg:px-14 xl:px-30 2xl:px-40">
+      <div className="w-full py-5 px-5 lg:px-14 ">
         {/* text */}
         <div>
           <h1 className="text-[16px] md:text-[24px] font-bold mb-5">

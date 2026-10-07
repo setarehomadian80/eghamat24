@@ -60,7 +60,7 @@ export default function PropertySimilarHotels({ slug, type }: Props) {
           : `اقامتگاه‌های مشابه ${property.name}`}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 overflow-auto">
         {similarHotels.map((place) => (
           <Link
             key={place.slug}

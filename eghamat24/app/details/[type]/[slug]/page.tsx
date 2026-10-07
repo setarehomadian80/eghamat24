@@ -110,7 +110,7 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto py-10 md:px-5 lg:px-14 xl:px-30 2xl:px-40">
+    <div className="xl:container mx-auto py-10 md:px-5 lg:px-14">
       {/* اطلاعات بالای بنر ها از سایز تبلت به بعد */}
 
       {/* Tablet */}

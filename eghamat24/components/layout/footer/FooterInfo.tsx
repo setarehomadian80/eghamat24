@@ -3,7 +3,7 @@ import "./footer.css";
 
 export default function FooterInfo() {
   return (
-    <main className="footerContent ">
+    <main className="footerContent">
       <div className="xl:grid xl:grid-cols-3 xl:gap-10">
         {/* 1 */}
         <div className="md:grid md:grid-cols-2 xl:grid-cols-1 gap-5 pb-10 border-b xl:col-span-1">

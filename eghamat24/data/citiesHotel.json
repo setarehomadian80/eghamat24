@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "cityId": 9,
+    "cityId":10,
     "city" : "قشم",
     "name": "هتل‌های قشم",
     "discount": "تخفیف تا 50%",
@@ -147,6 +147,21 @@
     "discount": "تخفیف تا 50%",
     "slug": "DubaiHotels",
     "href": "/hotel/DubaiHotels",
+    "type": "foreign",
+    "location": {
+      "lat": 25.2048,
+      "lng": 55.2708
+    }
+  },
+
+    {
+    "id": 12,
+    "cityId": 29,
+    "city" : "نجف",
+    "name": "هتل های نجف",
+    "discount": "تخفیف تا 50%",
+    "slug": "NajafHotels",
+    "href": "/hotel/NajafHotels",
     "type": "foreign",
     "location": {
       "lat": 25.2048,

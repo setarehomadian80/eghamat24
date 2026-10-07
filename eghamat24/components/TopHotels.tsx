@@ -77,7 +77,7 @@ export default function TopHotels() {
                   height: 180,
                   cursor: "pointer",
                 }}
-                className="rounded-lg"
+                className="rounded-lg object-cover"
                 image={hotel.image}
                 title={hotel.name}
               />

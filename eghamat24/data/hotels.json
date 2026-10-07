@@ -10,7 +10,7 @@
     "discount": "40% تخفیف",
     "rating": "8/10",
     "reviewCount": 443,
-    "image": "/Mashhad/Mashhad-Madineh_alreza-12.jpg",
+    "image": "/Mashhad/Mashhad-Madineh_alreza-12.webp",
     "area": "نزدیک حرم امام رضا",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -34,7 +34,7 @@
     "discount": "70% تخفیف",
     "rating": "8/10",
     "reviewCount": 1148,
-    "image": "/Mashhad/Mashhad-Almas_2-36.jpg",
+    "image": "/Mashhad/Mashhad-Almas_2-36.webp",
     "area": "خیابان امام رضا",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -58,7 +58,7 @@
     "discount": "38% تخفیف",
     "rating": "8/10",
     "reviewCount": 770,
-    "image": "/Mashhad/Mashhad-Qasr_talaee-23.jpg",
+    "image": "/Mashhad/Mashhad-Qasr_talaee-23.webp",
     "area": "خیابان امام رضا",
     "amenities": [
       "مجموعه آبی رایگان",
@@ -80,7 +80,7 @@
     "discount": "44% تخفیف",
     "rating": "7/10",
     "reviewCount": 211,
-    "image": "/Mashhad/Mashhad-Sinoor-91.jpg",
+    "image": "/Mashhad/Mashhad-Sinoor-91.webp",
     "area": "خیابان هفده شهریور",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -103,7 +103,7 @@
     "discount": "60% تخفیف",
     "rating": "7/10",
     "reviewCount": 715,
-    "image": "/Mashhad/Mashhad-Almas-24.jpg",
+    "image": "/Mashhad/Mashhad-Almas-24.webp",
     "area": "خیابان امام رضا",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -126,7 +126,7 @@
     "discount": "45% تخفیف",
     "rating": "6/10",
     "reviewCount": 175,
-    "image": "/Mashhad/Mashhad-Parsis-66.jpg",
+    "image": "/Mashhad/Mashhad-Parsis-66.webp",
     "area": " بلوار وحدت",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -149,7 +149,7 @@
     "discount": "5% تخفیف",
     "rating": "7.5/10",
     "reviewCount": 669,
-    "image": "/Mashhad/Mashhad-Darvishi-44.jpg",
+    "image": "/Mashhad/Mashhad-Darvishi-44.webp",
     "area": "خیابان امام رضا",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -172,7 +172,7 @@
     "discount": "61% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 346,
-    "image": "/Mashhad/Mashhad-AlmasNovin-99.jpg",
+    "image": "/Mashhad/Mashhad-AlmasNovin-99.webp",
     "area": "خیابان امام رضا",
     "amenities": [
       "ترانسفر استقبال فرودگاهی",
@@ -200,7 +200,7 @@
     "discount": "5% تخفیف",
     "rating": "8/10",
     "reviewCount": 1156,
-    "image": "/Tehran/Tehran-ParsianEsteghlal-65.jpg",
+    "image": "/Tehran/Tehran-ParsianEsteghlal-65.webp",
     "amenities": [
       "استخر رایگان",
       "پارکینگ رایگان"
@@ -222,7 +222,7 @@
     "discount": "18% تخفیف",
     "rating": "8/10",
     "reviewCount": 645,
-    "image": "/Tehran/Tehran-ParsianAzadi-27.jpg",
+    "image": "public/Tehran/Tehran-ParsianAzadi-27.webp",
     "amenities": [
       "روم سرویس",
       "آسانسور",
@@ -245,7 +245,7 @@
     "discount": "41% تخفیف",
     "rating": "8.9/10",
     "reviewCount": 23,
-    "image": "/Tehran/tehran-granmirasrashidieh-1.jpg",
+    "image": "/Tehran/tehran-granmirasrashidieh-1.webp",
     "amenities": [
       "صبحانه",
       "باشگاه ورزشی",
@@ -268,7 +268,7 @@
     "discount": "60% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 426,
-    "image": "/Tehran/Tehran-Persianplazahotel-10.jpg",
+    "image": "/Tehran/Tehran-Persianplazahotel-10.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -291,7 +291,7 @@
     "discount": "52% تخفیف",
     "rating": "8.3/10",
     "reviewCount": 119,
-    "image": "/Tehran/Tehran-Atana-43.jpg",
+    "image": "/Tehran/Tehran-Atana-43.webp",
     "amenities": [
       "صبحانه",
       "کافی‌شاپ",
@@ -314,7 +314,7 @@
     "discount": "5% تخفیف",
     "rating": "7.3/10",
     "reviewCount": 793,
-    "image": "/Tehran/Tehran-EspinasPalas-77.jpg",
+    "image": "/Tehran/Tehran-EspinasPalas-77.webp",
     "amenities": [
       "رستوران",
       "استخر",
@@ -337,7 +337,7 @@
     "discount": "10% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 426,
-    "image": "/Tehran/Tehran-Espinas-62.jpg",
+    "image": "/Tehran/Tehran-Espinas-62.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -360,7 +360,7 @@
     "discount": "30% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 237,
-    "image": "/Tehran/Tehran-Wisteria-06.jpg",
+    "image": "/Tehran/Tehran-Wisteria-06.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -383,7 +383,7 @@
     "discount": "5% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 230,
-    "image": "/Tehran/Tehran-Novotel-03.jpg",
+    "image": "/Tehran/Tehran-Novotel-03.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -406,7 +406,7 @@
     "discount": "35% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 93,
-    "image": "/Tehran/tehran-nourhayat-1.jpg",
+    "image": "/Tehran/tehran-nourhayat-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -429,7 +429,7 @@
     "discount": "35% تخفیف",
     "rating": "7.6/10",
     "reviewCount": 93,
-    "image": "/Tehran/Tehran-Ramtin-11.jpg",
+    "image": "/Tehran/Tehran-Ramtin-11.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -452,7 +452,7 @@
     "discount": "25% تخفیف",
     "rating": "6.6/10",
     "reviewCount": 93,
-    "image": "/Tehran/Tehran-Homa-53.jpg",
+    "image": "/Tehran/Tehran-Homa-53.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -479,7 +479,7 @@
     "discount": "9% تخفیف",
     "rating": "8.6/10",
     "reviewCount": 563,
-    "image": "/Shiraz/Shiraz-Shiraz-08.jpg",
+    "image": "/Shiraz/Shiraz-Shiraz-08.webp",
     "area": "نزدیک دروازه قرآن",
     "amenities": [
       "صبحانه",
@@ -502,7 +502,7 @@
     "discount": "5% تخفیف",
     "rating": "7.2/10",
     "reviewCount": 619,
-    "image": "/Shiraz/Shiraz-Chamran-12.jpg",
+    "image": "/Shiraz/Shiraz-Chamran-12.webp",
     "area": "بلوار چمران",
     "amenities": [
       "صبحانه",
@@ -525,7 +525,7 @@
     "discount": "35% تخفیف",
     "rating": "8.5/10",
     "reviewCount": 104,
-    "image": "/Shiraz/shiraz-rose-8.jpg",
+    "image": "/Shiraz/shiraz-rose-8.webp",
     "area": "شهر جدید صدرا",
     "amenities": [
       "استخر",
@@ -548,7 +548,7 @@
     "discount": "26% تخفیف",
     "rating": "6.2/10",
     "reviewCount": 263,
-    "image": "/Shiraz/Shiraz-Perspolis-10.jpg",
+    "image": "/Shiraz/Shiraz-Perspolis-10.webp",
     "area": "مرکز شهر شیراز",
     "amenities": [
       "کنسلی رایگان",
@@ -571,7 +571,7 @@
     "discount": "5% تخفیف",
     "rating": "7.2/10",
     "reviewCount": 194,
-    "image": "/Shiraz/Shiraz-Homa-05.jpg",
+    "image": "/Shiraz/Shiraz-Homa-05.webp",
     "area": "میدان گاز",
     "amenities": [
       "صبحانه",
@@ -598,7 +598,7 @@
     "discount": "20% تخفیف",
     "rating": "9.2/10",
     "reviewCount": 278,
-    "image": "/Isfahan/esfahan-janat-1.jpg",
+    "image": "/Isfahan/esfahan-janat-1.webp",
     "area": "مرکز شهر اصفهان",
     "amenities": [
       "صبحانه",
@@ -621,7 +621,7 @@
     "discount": "12% تخفیف",
     "rating": "8.6/10",
     "reviewCount": 518,
-    "image": "/Isfahan/Esfahan-ParsianKosar-18.jpg",
+    "image": "/Isfahan/Esfahan-ParsianKosar-18.webp",
     "area": "کنار زاینده‌رود",
     "amenities": [
       "صبحانه",
@@ -644,7 +644,7 @@
     "discount": "47% تخفیف",
     "rating": "7.5/10",
     "reviewCount": 295,
-    "image": "/Isfahan/Esfahan-SonnatiToloeKhorshid-68.jpg",
+    "image": "/Isfahan/Esfahan-SonnatiToloeKhorshid-68.webp",
     "area": "خیابان ابن سینا",
     "amenities": [
       "صبحانه",
@@ -667,7 +667,7 @@
     "discount": "22% تخفیف",
     "rating": "8.3/10",
     "reviewCount": 471,
-    "image": "/Isfahan/Esfahan-Piroozi-26.jpg",
+    "image": "/Isfahan/Esfahan-Piroozi-26.webp",
     "area": "میدان امام حسین",
     "amenities": [
       "صبحانه",
@@ -690,7 +690,7 @@
     "discount": "20% تخفیف",
     "rating": "8.2/10",
     "reviewCount": 293,
-    "image": "/Isfahan/Esfahan-Ali_qapu-10.jpg",
+    "image": "/Isfahan/Esfahan-Ali_qapu-10.webp",
     "area": "چهارباغ عباسی",
     "amenities": [
       "صبحانه",
@@ -717,7 +717,7 @@
     "discount": "33% تخفیف",
     "rating": "7.7/10",
     "reviewCount": 316,
-    "image": "/Yazd/Yazd-Moshir_ol_mamalek-09.jpg",
+    "image": "/Yazd/Yazd-Moshir_ol_mamalek-09.webp",
     "area": "بلوار مشیرالممالک",
     "amenities": [
       "صبحانه",
@@ -740,7 +740,7 @@
     "discount": "44% تخفیف",
     "rating": "8.4/10",
     "reviewCount": 72,
-    "image": "/Yazd/Yazd-Sibonaar-8.jpg",
+    "image": "/Yazd/Yazd-Sibonaar-8.webp",
     "area": "دروازه قرآن",
     "amenities": [
       "صبحانه",
@@ -763,7 +763,7 @@
     "discount": "34% تخفیف",
     "rating": "7.3/10",
     "reviewCount": 578,
-    "image": "/Yazd/Yazd-ParsiyanSafaieh-92.jpg",
+    "image": "/Yazd/Yazd-ParsiyanSafaieh-92.webp",
     "area": "صفائیه",
     "amenities": [
       "صبحانه",
@@ -786,7 +786,7 @@
     "discount": "35% تخفیف",
     "rating": "7.4/10",
     "reviewCount": 115,
-    "image": "/Yazd/Yazd-ArgJadid-14.jpg",
+    "image": "/Yazd/Yazd-ArgJadid-14.webp",
     "area": "صفائیه",
     "amenities": [
       "صبحانه",
@@ -809,7 +809,7 @@
     "discount": "40% تخفیف",
     "rating": "7.9/10",
     "reviewCount": 198,
-    "image": "/Yazd/yazd-negin-1.jpg",
+    "image": "/Yazd/yazd-negin-1.webp",
     "area": "بلوار جمهوری",
     "amenities": [
       "صبحانه",
@@ -1235,7 +1235,7 @@
     "discount": "20% تخفیف",
     "rating": "4.4/10",
     "reviewCount": 57,
-    "image": "/Qeshm/Qeshm-Alvand2-21.jpg",
+    "image": "/Qeshm/Qeshm-Alvand2-21.webp",
     "area": "بلوار آزادگان",
     "amenities": [
       "صبحانه",
@@ -1258,7 +1258,7 @@
     "discount": "64% تخفیف",
     "rating": "6.4/10",
     "reviewCount": 6,
-    "image": "/Qeshm/Qeshm-Aseman-46.jpg",
+    "image": "/Qeshm/Qeshm-Aseman-46.webp",
     "area": "مرکز شهر قشم",
     "amenities": [
       "کافی‌شاپ",
@@ -1281,7 +1281,7 @@
     "discount": "10% تخفیف",
     "rating": "6.8/10",
     "reviewCount": 30,
-    "image": "/Qeshm/Qeshm-Nakhl_hengam-10.jpg",
+    "image": "/Qeshm/Qeshm-Nakhl_hengam-10.webp",
     "area": "جزیره قشم",
     "amenities": [
       "صبحانه",
@@ -1304,7 +1304,7 @@
     "discount": "5% تخفیف",
     "rating": "5.2/10",
     "reviewCount": 24,
-    "image": "/Qeshm/qeshm-amir-30.jpg",
+    "image": "/Qeshm/qeshm-amir-30.webp",
     "area": "مرکز شهر قشم",
     "amenities": [
       "صبحانه",
@@ -1327,7 +1327,7 @@
     "discount": "5% تخفیف",
     "rating": "6.8/10",
     "reviewCount": 2,
-    "image": "/Qeshm/qeshm-lachin-28.jpg",
+    "image": "/Qeshm/qeshm-lachin-28.webp",
     "area": "خیابان نخل زرین",
     "amenities": [
       "اینترنت رایگان",
@@ -1378,7 +1378,7 @@
     "discount": "15% تخفیف",
     "rating": "9.5/10",
     "reviewCount": 415,
-    "image": "/Tabriz/Tabriz-LalehPark-45.jpg",
+    "image": "/Tabriz/Tabriz-LalehPark-45.webp",
     "area": "بزرگراه پاسداران",
     "amenities": [
       "صبحانه",
@@ -1402,7 +1402,7 @@
     "discount": "12% تخفیف",
     "rating": "8.8/10",
     "reviewCount": 190,
-    "image": "/Tabriz/Tabriz-Shariyar-120.jpg",
+    "image": "/Tabriz/Tabriz-Shariyar-120.webp",
     "area": "خیابان امام خمینی",
     "amenities": [
       "صبحانه",
@@ -1995,7 +1995,7 @@
     "discount": "20% تخفیف",
     "rating": "9.8/10",
     "reviewCount": 3258,
-    "image": "/Dubai/dubai-visionimperial-1.jpg",
+    "image": "/Dubai/dubai-visionimperial-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -2019,7 +2019,7 @@
     "discount": "15% تخفیف",
     "rating": "9.9/10",
     "reviewCount": 2147,
-    "image": "/Dubai/Dubai-CitySeasonsDeira-1.jpg",
+    "image": "/Dubai/Dubai-CitySeasonsDeira-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -2043,7 +2043,7 @@
     "discount": "18% تخفیف",
     "rating": "9.5/10",
     "reviewCount": 1896,
-    "image": "/Dubai/dubai-thepark-1.jpg",
+    "image": "/Dubai/dubai-thepark-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -2067,7 +2067,7 @@
     "discount": "22% تخفیف",
     "rating": "9.6/10",
     "reviewCount": 1468,
-    "image": "/Dubai/Dubai-MillenniumPlazaDowntown-1.jpg",
+    "image": "/Dubai/Dubai-MillenniumPlazaDowntown-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -2091,7 +2091,7 @@
     "discount": "12% تخفیف",
     "rating": "9.3/10",
     "reviewCount": 1249,
-    "image": "/Dubai/dubai-albandarrotana-1.jpg",
+    "image": "/Dubai/dubai-albandarrotana-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",
@@ -2115,7 +2115,7 @@
     "discount": "10% تخفیف",
     "rating": "9.2/10",
     "reviewCount": 2765,
-    "image": "/Dubai/dubai-voco-1.jpg",
+    "image": "/Dubai/dubai-voco-1.webp",
     "amenities": [
       "صبحانه",
       "استخر",

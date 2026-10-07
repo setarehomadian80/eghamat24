@@ -30,12 +30,13 @@ export default function RootLayout({
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-iransans 2xl:container mx-auto">
+      <body className="min-h-full flex flex-col font-iransans
+       xl:container mx-auto">
         <div>
           <Header />
         </div>
         {children}
-        <div className="w-full 2xl:container mx-auto px-5 lg:px-14 xl:px-30 2xl:px-40">
+        <div className="w-full px-5 lg:px-14 xl:container mx-auto ">
           <Footer />
         </div>
       </body>
