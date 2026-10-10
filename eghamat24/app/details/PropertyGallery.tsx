@@ -31,26 +31,20 @@ export default function HotelGallery({ slug, type }: Props) {
 
   if (!detail) return null;
 
-  const mainImage =
-    type === "hotel"
-      ? hotel?.image
-      : detail?.gallery[0];
+  const mainImage = type === "hotel" ? hotel?.image : detail?.gallery[0];
 
   if (!mainImage) return null;
 
   const images = [
     mainImage,
-    ...(detail?.gallery.filter((img) => img !== mainImage) ?? []),
+    ...(detail.gallery.filter((img) => img !== mainImage) ?? []),
   ];
 
   const propertyName =
-    type === "hotel"
-      ? hotel?.name || ""
-      : detail?.title || "";
+    type === "hotel" ? hotel?.name || "" : detail?.title || "";
 
   const [activeImage, setActiveImage] = useState(images[0]);
 
-  // نمایش گالری کامل
   if (showGallery) {
     return (
       <GalleryList
@@ -63,10 +57,17 @@ export default function HotelGallery({ slug, type }: Props) {
   }
 
   return (
-    <section className="w-full overflow-hidden">
+    <section
+      className="
+        w-full
+        max-w-[1400px]
+        mx-auto
+        overflow-hidden
+      "
+    >
       {/* ================= موبایل ================= */}
 
-      <div className="block md:hidden">
+      <div className="block md:hidden overflow-hidden">
         <Swiper
           modules={[Autoplay, Pagination]}
           slidesPerView={1}
@@ -81,14 +82,24 @@ export default function HotelGallery({ slug, type }: Props) {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-[250px] w-full">
+              <div
+                className="
+                  w-full
+                  h-[250px]
+                "
+              >
                 <Image
                   src={image}
                   alt={propertyName}
-                  fill
+                  width={900}
+                  height={600}
                   priority={index === 0}
-                  sizes="100vw"
-                  className="object-cover!"
+                  // sizes="100vw"
+                  className="
+                    w-full
+                    h-full
+                    object-cover
+                  "
                 />
               </div>
             </SwiperSlide>
@@ -96,7 +107,7 @@ export default function HotelGallery({ slug, type }: Props) {
         </Swiper>
       </div>
 
-      {/* ================= تبلت و دسکتاپ ================= */}
+      {/* ================= md به بالا ================= */}
 
       <div
         className="
@@ -104,42 +115,71 @@ export default function HotelGallery({ slug, type }: Props) {
           md:grid
           md:grid-cols-4
           gap-2
-          h-[220px]
-          lg:h-[300px]
-          xl:h-[350px]
-          2xl:h-[400px]
           md:mt-10
         "
       >
-        {/* عکس بزرگ */}
+     
 
-        <div className="relative col-span-2">
+        {/* عکس اصلی */}
+
+        <div
+          className="
+            col-span-2
+            h-full
+            overflow-hidden
+            rounded-xl
+          "
+        >
           <Image
             src={activeImage}
             alt={propertyName}
-            fill
+            width={1000}
+            height={800}
             priority
-            sizes="60vw"
-            className="rounded-xl object-cover"
+            sizes="50vw"
+            className="
+              w-full
+              h-full
+              object-cover
+              rounded-xl
+            "
           />
         </div>
 
-        {/* عکس های کوچک */}
+        {/* چهار عکس کوچک */}
 
-        <div className="grid grid-cols-2 gap-2 col-span-2 relative">
+        <div
+          className="
+            col-span-2
+            grid
+            grid-cols-2
+            grid-rows-2
+            gap-2
+            h-full
+            relative
+          "
+        >
           {images.slice(1, 5).map((image, index) => (
             <button
               key={index}
               onClick={() => setActiveImage(image)}
-              className="relative overflow-hidden rounded-xl"
+              className="
+                relative
+                overflow-hidden
+                rounded-xl
+              "
             >
               <Image
                 src={image}
                 alt={`${propertyName}-${index}`}
-                fill
-                sizes="20vw"
+                width={500}
+                height={400}
+                sizes="25vw"
                 className={`
+                  w-full
+                  h-full
                   object-cover
+                  rounded-xl
                   transition
                   duration-200
                   ${
@@ -151,8 +191,6 @@ export default function HotelGallery({ slug, type }: Props) {
               />
             </button>
           ))}
-
-          {/* دکمه مشاهده همه */}
 
           <button
             onClick={() => setShowGallery(true)}
@@ -168,8 +206,6 @@ export default function HotelGallery({ slug, type }: Props) {
               shadow-md
               text-sm
               font-medium
-              hover:bg-gray-100
-              transition
             "
           >
             مشاهده همه

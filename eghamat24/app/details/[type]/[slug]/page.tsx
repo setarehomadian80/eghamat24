@@ -110,7 +110,7 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div className="xl:container mx-auto py-10 md:px-5 lg:px-14">
+    <div className="w-full xl:container mx-auto py-10 md:px-5 lg:px-14 overflow-x-hidden">
       {/* اطلاعات بالای بنر ها از سایز تبلت به بعد */}
 
       {/* Tablet */}
@@ -143,21 +143,19 @@ export default async function Page({ params }: Props) {
       {/* Banner swiper */}
       <PropertyGallery slug={slug} type={type} />
 
+
       {/* //////////////////// */}
       <div className="px-5 md:px-0">
         <div className="md:hidden mt-8">
           <PropertyInfo property={property} type={type} />
         </div>
 
-        {/* ////////////// Options ////////////*/}
         <PropertyBenefits />
 
-        {/*/////////////// detail /////////////*/}
         <PropertyTabs />
 
         {/* این باکس برای کنار هم قرار گرفتن دو تا کامپوننت در سایز تبلت به بالا */}
         <div className="lg:grid lg:grid-cols-2">
-          {/*//////////// about property ///////////*/}
           <PropertyAbout
             title={detail.title}
             description={detail.des}
@@ -165,41 +163,29 @@ export default async function Page({ params }: Props) {
             details={dec}
           />
 
-          {/*///////////////// Amenities//////////// */}
           <PropertyAmenities />
         </div>
 
-        {/* ///////////// 2 box /////////// */}
         <PropertyBoxes property={property} type={type} />
 
-        {/* //////////PropertyDatePicker/////// */}
         <PropertyDatePicker detail={detail} />
 
-        {/* Rooms */}
         <PropertyRooms />
 
-        {/* Rules */}
         <PropertyRules slug={slug} type={type} />
 
-        {/* PropertyDistance */}
         <PropertyDistance slug={slug} type={type} />
 
-        {/* AmenitiesAndReviews */}
         <AmenitiesAndReviews slug={slug} type={type} />
 
-        {/* PropertyReviews */}
         <PropertyReviews />
 
-        {/* SimilarHotels */}
         <PropertySimilarHotels slug={slug} type={type} />
 
-        {/* PropertyQuestions */}
         <PropertyQuestions slug={slug} type={type} />
 
-        {/* PropertyCategories */}
         <PropertyCategories slug={slug} type={type} />
 
-        {/* PropertyMoreInFormation */}
         <PropertyDescription />
 
         {/* end main box */}

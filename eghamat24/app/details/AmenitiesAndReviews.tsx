@@ -9,9 +9,7 @@ type Props = {
 
 export default function AmenitiesAndReviews({ slug, type }: Props) {
   const hotel =
-    type === "hotel"
-      ? hotels.find((item) => item.slug === slug)
-      : undefined;
+    type === "hotel" ? hotels.find((item) => item.slug === slug) : undefined;
 
   const accommodationProperty =
     type === "accommodation"
@@ -67,19 +65,27 @@ export default function AmenitiesAndReviews({ slug, type }: Props) {
           {/* image */}
           <div
             className="
-          w-[120px]
-          h-[120px] 
-          md:w-[200px] 
-          md:h-[150px] 
+          w-30
+          h-30
+          md:w-50
+          md:h-37.5 
           relative
           object-cover
+          overflow-hidden
           "
           >
             <Image
-              className="rounded-[5px]"
               src="/DetailGallery/2.webp"
-              fill
               alt="picture"
+              width={200}
+              height={150}
+              sizes="(max-width: 768px) 120px, 200px"
+              className="
+      w-full
+      h-full
+      object-cover
+      rounded-[5px]
+    "
             />
           </div>
         </div>

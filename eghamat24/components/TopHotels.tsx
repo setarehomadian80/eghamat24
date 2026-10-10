@@ -54,7 +54,7 @@ export default function TopHotels() {
   return (
     <div>
       <h2
-        className="text-lg font-bold"
+        className="text-[16px] lg:text-[18px] font-bold"
         style={{
           fontFamily: "var(--font-iransans)",
         }}

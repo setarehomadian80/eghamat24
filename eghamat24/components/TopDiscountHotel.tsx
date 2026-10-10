@@ -34,7 +34,7 @@ export default function TopDiscountHotels() {
   return (
     <div className="rounded-lg">
       <div>
-        <h1> بیشترین تخفیف ها</h1>
+        <h1 className="text-[16px] lg:text-[18px] font-bold"> بیشترین تخفیف ها</h1>
       </div>
 
       {/* hotel cards */}

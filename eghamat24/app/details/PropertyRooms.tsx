@@ -5,12 +5,16 @@ import { BedDouble, Users, Coffee } from "lucide-react";
 export default function PropertyRooms() {
   return (
     <section className="mt-12">
-      <h2 className="
+      <h2
+        className="
       text-[16px] 
       md:text-[18px] 
       xl:text-[20px] 
       font-bold mb-6 
-      ">لیست اتاق ها</h2>
+      "
+      >
+        لیست اتاق ها
+      </h2>
 
       <div className="flex flex-col gap-5">
         {rooms.map((room) => (
@@ -120,11 +124,14 @@ export default function PropertyRooms() {
               <Image
                 src={room.image}
                 alt={room.name}
-                fill
+                width={240}
+                height={144}
                 className="
-                object-cover
-                rounded-lg
-              "
+     w-full
+      h-full
+      object-cover
+      rounded-lg
+    "
               />
             </div>
 

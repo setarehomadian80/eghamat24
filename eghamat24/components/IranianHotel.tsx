@@ -55,9 +55,10 @@ const banners = [
 export default function IranianHotelSlider() {
   return (
     <section className="w-full" dir="rtl">
-      <div className="my-4 flex justify-between">
-        <h1 className="font-bold">هتل های ایران</h1>
-        <div className="flex items-center text-[#37a0fb]">
+      <div className="my-4 flex justify-between relative z-10">
+        <h1 className="font-bold text-[16px] lg:text-[18px]">هتل های ایران</h1>
+        <div className="flex text-[14px] lg:text-[16px]
+         items-center text-[#37a0fb]">
           <Link href="#">همه شهر ها </Link>
           <ChevronLeft />
         </div>
@@ -91,7 +92,8 @@ export default function IranianHotelSlider() {
         {banners.map((banner, index) => (
           <SwiperSlide key={index}>
             <div>
-              <div className="relative h-[140px] md:h-[200px] lg:h-[260px] overflow-hidden rounded-lg">
+              <div className="relative h-35 md:h-50
+               lg:h-65 overflow-hidden rounded-lg">
                 <Image
                   src={banner.linkHotel}
                   alt={banner.title}
@@ -102,7 +104,7 @@ export default function IranianHotelSlider() {
                 />
               </div>
 
-              <p className="mt-2 text-center text-sm font-medium">
+              <p className="mt-2 text-center text-[12px] lg:text-[14px] font-medium">
                 {banner.title}
               </p>
             </div>

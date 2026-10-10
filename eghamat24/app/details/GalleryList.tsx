@@ -7,7 +7,6 @@ import detailAccommodation from "@/data/detailAccommodation.json";
 import { useEffect } from "react";
 import { X } from "lucide-react";
 
-
 type Props = {
   slug: string;
   type: "hotel" | "accommodation";
@@ -15,15 +14,7 @@ type Props = {
   onClose: () => void;
 };
 
-
-export default function GalleryList({
-  slug,
-  type,
-  name,
-  onClose,
-}: Props) {
-
-
+export default function GalleryList({ slug, type, name, onClose }: Props) {
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
 
@@ -34,24 +25,15 @@ export default function GalleryList({
     };
   }, []);
 
-
-
-
   // پیدا کردن دیتای مربوطه
   const detail =
     type === "hotel"
       ? detailHotel.find((item) => item.slug === slug)
       : detailAccommodation.find((item) => item.slug === slug);
 
-
-
   if (!detail) return null;
 
-
-
   const images = detail.gallery;
-
-
 
   return (
     <main
@@ -65,7 +47,6 @@ export default function GalleryList({
         justify-center
       "
     >
-
       <div
         className="
           bg-white
@@ -78,16 +59,10 @@ export default function GalleryList({
           scrollbar-thin
         "
       >
-
-
         {/* header */}
 
         <div className="flex justify-between items-center mb-5">
-
-          <h2 className="font-bold text-lg">
-            تصاویر {name}
-          </h2>
-
+          <h2 className="font-bold text-lg">تصاویر {name}</h2>
 
           <button
             onClick={onClose}
@@ -100,10 +75,7 @@ export default function GalleryList({
           >
             <X />
           </button>
-
         </div>
-
-
 
         {/* gallery */}
 
@@ -116,9 +88,7 @@ export default function GalleryList({
             gap-3
           "
         >
-
           {images.map((image, index) => (
-
             <div
               key={index}
               className="
@@ -128,24 +98,21 @@ export default function GalleryList({
                 overflow-hidden
               "
             >
-
               <Image
                 src={image}
                 alt={`${name}-${index}`}
                 fill
+                sizes="
+    (max-width: 1024px) 50vw,
+    (max-width: 1280px) 33vw,
+    25vw
+  "
                 className="object-cover"
               />
-
             </div>
-
           ))}
-
-
         </div>
-
-
       </div>
-
     </main>
   );
 }

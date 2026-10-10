@@ -70,7 +70,7 @@ export default function CanseledHotel() {
                 cursor-pointer
                   w-[80px] min-w-[80px] shrink-0
                  whitespace-nowrap text-gray-600
-                  p-2
+                  p-2 text-[12px] lg:text-[14px]
                  transition-all duration-300 ease-in-out
                 ${
                   active === city.id
@@ -86,7 +86,7 @@ export default function CanseledHotel() {
 
         {/* show all */}
         <button
-          className="text-[14px] text-[#37a0fb] hidden xl:flex
+          className="text-[12px] lg:text-[14px] text-[#37a0fb] hidden xl:flex
          font-bold whitespace-nowrap cursor-pointer"
         >
           مشاهده همه هتل‌های {selectedCity?.city}

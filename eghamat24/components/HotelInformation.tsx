@@ -7,7 +7,7 @@ export default function HotelInformation() {
 
   return (
     <main className="text-gray-800 hotel-content">
-      <div>
+      <div className="relative">
         <div
           ref={contentRef}
           className="overflow-hidden transition-[height] duration-500"
@@ -494,11 +494,24 @@ export default function HotelInformation() {
           </ul>
         </div>
         {!isExpanded && (
-          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white/90 to-transparent" />
+          <div
+            className="
+          pointer-events-none
+      absolute
+      bottom-0
+      left-0
+      right-0
+      h-20
+      bg-gradient-to-t
+      from-white
+      via-white/80
+      to-transparent
+      z-10"
+          />
         )}
       </div>
 
-      <div className="w-full text-center text-lg">
+      <div className="w-full text-center text-[12px] lg:text-[14px]">
         <button
           onClick={() => setIsExpanded((prev) => !prev)}
           className="mt-4 text-[#37a0fb]"
